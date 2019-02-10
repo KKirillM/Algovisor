@@ -1,0 +1,88 @@
+body {
+  font-family: Tahoma, Arial;
+}
+
+H1 {
+  margin-top:12.00pt;
+  margin-bottom:12.00pt;
+  text-align:left;
+  font-size: 105%;
+  font-weight:bold;
+}
+
+H2 {
+  margin-top:6.00pt;
+  margin-bottom:6.00pt;
+  text-align:left;
+  font-size: 90%;
+  font-weight:bold;
+}
+
+P {
+  margin-top:6.00pt;
+  margin-bottom:6.00pt;
+  text-align:justify;
+  font-size: 75%;
+}
+
+span.IfaceElem {
+  font-weight: bold;
+}
+
+span.Warning {
+  font-weight: bold;
+  color: #FF660D;
+}
+
+span.grey {
+  color: #808080;
+}
+
+span.small {
+  font-size: 75%;
+}
+
+P.List {
+  margin-top:3.00pt;
+  margin-bottom:3.00pt;
+  margin-left:18.00pt;
+}
+
+DL {
+  font-size: 75%;
+  margin-top:3.00pt;
+  margin-bottom:3.00pt;
+}
+
+DT {
+  font-weight: bold;
+}
+
+DD {
+  margin-top:3.00pt;
+  margin-bottom:6.00pt;
+}
+
+UL {
+  font-size: 75%;
+  margin-top:3.00pt;
+  margin-bottom:3.00pt;
+}
+
+DL UL {
+  font-size: 100%;
+  margin-left:12.00pt;
+}
+
+DIV.expand {
+  margin-left: 0pt;
+  padding-left: 6pt;
+  border-left: 3pt solid #E1F1E1;
+  background-color: #e9f3e9;
+  font-size: 75%;
+}
+
+table {
+  font-size: 75%;
+  text-align: left;
+}

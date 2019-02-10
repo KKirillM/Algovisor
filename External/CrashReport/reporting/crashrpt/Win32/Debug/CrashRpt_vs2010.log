@@ -1,0 +1,30 @@
+﻿Build started 27.12.2016 21:05:04.
+     1>Project "e:\Algovisor_repository\External\CrashReport\reporting\crashrpt\CrashRpt_vs2010.vcxproj" on node 5 (Build target(s)).
+     1>ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\CL.exe /c /IE:\Algovisor_repository\External\CrashReport\include /IE:\Algovisor_repository\External\CrashReport\reporting\crashsender /IE:\Algovisor_repository\External\CrashReport\thirdparty\tinyxml /IE:\Algovisor_repository\External\CrashReport\thirdparty\zlib /IE:\Algovisor_repository\External\CrashReport\thirdparty\libpng /IE:\Algovisor_repository\External\CrashReport\thirdparty\wtl /ZI /nologo /W4 /WX- /MP /Od /Oy- /D WIN32 /D _DEBUG /D _WINDOWS /D _USRDLL /D CRASHRPT_EXPORTS /D _VC80_UPGRADE=0x0600 /D _WINDLL /D _UNICODE /D UNICODE /Gm- /EHsc /RTC1 /MDd /GS /fp:precise /fp:except /Zc:wchar_t /Zc:forScope /Yc"stdafx.h" /Fp"Win32\Debug\CrashRpt1402d.pch" /Fo"Win32\Debug\\" /Fd"Win32\Debug\vc110.pdb" /FR"Win32\Debug\\" /Gd /TP /analyze- /errorReport:prompt StdAfx.cpp
+         StdAfx.cpp
+         C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\CL.exe /c /IE:\Algovisor_repository\External\CrashReport\include /IE:\Algovisor_repository\External\CrashReport\reporting\crashsender /IE:\Algovisor_repository\External\CrashReport\thirdparty\tinyxml /IE:\Algovisor_repository\External\CrashReport\thirdparty\zlib /IE:\Algovisor_repository\External\CrashReport\thirdparty\libpng /IE:\Algovisor_repository\External\CrashReport\thirdparty\wtl /ZI /nologo /W4 /WX- /MP /Od /Oy- /D WIN32 /D _DEBUG /D _WINDOWS /D _USRDLL /D CRASHRPT_EXPORTS /D _VC80_UPGRADE=0x0600 /D _WINDLL /D _UNICODE /D UNICODE /Gm- /EHsc /RTC1 /MDd /GS /fp:precise /fp:except /Zc:wchar_t /Zc:forScope /Yu"stdafx.h" /Fp"Win32\Debug\CrashRpt1402d.pch" /Fo"Win32\Debug\\" /Fd"Win32\Debug\vc110.pdb" /FR"Win32\Debug\\" /Gd /TP /analyze- /errorReport:prompt CrashHandler.cpp CrashRpt.cpp SharedMem.cpp Utility.cpp
+         CrashHandler.cpp
+         CrashRpt.cpp
+         SharedMem.cpp
+         Utility.cpp
+     1>e:\algovisor_repository\external\crashreport\reporting\crashrpt\crashrpt.cpp(780): warning C4702: unreachable code
+       ResourceCompile:
+         C:\Program Files (x86)\Windows Kits\8.0\bin\x86\rc.exe /D _DEBUG /D _VC80_UPGRADE=0x0600 /D _UNICODE /D UNICODE /l"0x0409" /IE:\Algovisor_repository\External\CrashReport\thirdparty\wtl /nologo /fo"Win32\Debug\CrashRpt.res" CrashRpt.rc 
+       Link:
+         C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"E:\Algovisor_repository\External\CrashReport\bin\Win32\CrashRpt1402d.dll" /NOLOGO psapi.lib mapi32.lib Rpcrt4.lib version.lib shell32.lib Comdlg32.lib gdi32.lib psapi.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /DEF:"CrashRpt.def" /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"E:\Algovisor_repository\External\CrashReport\bin\Win32\CrashRpt1402d.pdb" /TLBID:1 /BASE:"0x20000000" /DYNAMICBASE /NXCOMPAT /IMPLIB:"E:\Algovisor_repository\External\CrashReport\lib\CrashRpt1402d.lib" /MACHINE:X86 /SAFESEH /DLL Win32\Debug\CrashRpt.res
+         Win32\Debug\CrashHandler.obj
+         Win32\Debug\CrashRpt.obj
+         Win32\Debug\SharedMem.obj
+         Win32\Debug\StdAfx.obj
+         Win32\Debug\Utility.obj
+     1>CrashHandler.obj : warning LNK4075: ignoring '/EDITANDCONTINUE' due to '/SAFESEH' specification
+            Creating library E:\Algovisor_repository\External\CrashReport\lib\CrashRpt1402d.lib and object E:\Algovisor_repository\External\CrashReport\lib\CrashRpt1402d.exp
+         CrashRpt_vs2010.vcxproj -> E:\Algovisor_repository\External\CrashReport\bin\Win32\CrashRpt1402d.dll
+       BscMake:
+         C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\bscmake.exe /nologo /o"E:\Algovisor_repository\External\CrashReport\bin\Win32\CrashRpt1402d.bsc" Win32\Debug\CrashHandler.sbr Win32\Debug\CrashRpt.sbr Win32\Debug\SharedMem.sbr Win32\Debug\StdAfx.sbr Win32\Debug\Utility.sbr
+     1>Done Building Project "e:\Algovisor_repository\External\CrashReport\reporting\crashrpt\CrashRpt_vs2010.vcxproj" (Build target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:00:10.76

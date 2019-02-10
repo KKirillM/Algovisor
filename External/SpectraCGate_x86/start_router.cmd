@@ -1,0 +1,1 @@
+start .\bin\P2MQRouter.exe /ini:.\bin\plaza2_router.ini

@@ -1,0 +1,870 @@
+Copyright (c) 2014 by Omnesys Technologies, Inc.  All rights reserved.
+
+Warning :
+	This Software Product is protected by copyright law and international
+	treaties.  Unauthorized use, reproduction or distribution of this
+	Software Product (including its documentation), or any portion of it,
+	may result in severe civil and criminal penalties, and will be
+	prosecuted to the maximum extent possible under the law.
+
+	Omnesys Technologies, Inc. will compensate individuals providing
+	admissible evidence of any unauthorized use, reproduction, distribution
+	or redistribution of this Software Product by any person, company or 
+	organization.
+
+This Software Product is licensed strictly in accordance with a separate
+Software System License Agreement, granted by Omnesys Technologies, Inc., which
+contains restrictions on use, reverse engineering, disclosure, confidentiality 
+and other matters.
+
+On April 7, 2011, Omnesys ended all technical support and maintenance, updates 
+and assistance for its products running on all versions of the Microsoft 
+Windows XP operating system.  Omnesys customers still running Windows XP are 
+encouraged to upgrade as soon as possible to Microsoft Windows 7 or migrate to 
+another operating system that continues to be supported by Omnesys.  Omnesys 
+will not be responsible for any direct or indirect software or hardware 
+malfunctions, system failures or other damages due to the continued use of 
+Omnesys products running on any version of the Microsoft Windows XP operating 
+system after May 31, 2011.
+
+
+             Release Notes for RApi.cpp version 7.3.0.0
+             ------------------------------------------
+
+NOTE : In a future release, the order number, which is currently an int,
+       will be changed to the type tsNCharcb.
+
+A new callback has been added, RCallbacks::BestBidAskQuote().  When the R | API
+client receives a message which includes both the best bid and ask, this 
+callback will be invoked.  Previously the best ask callback was invoked first,
+followed by the best bid callback.
+
+It is possible that the best bid and ask will both change simultaneously on a 
+single market event.  In this case, the new callback will more accurately 
+reflect market conditions.
+
+It is also possible that a market data feed will always publish both the best 
+bid and ask even when only one side has updated.  In this case, the new callback
+will avoid what would appear as duplicate best bid/ask updates.
+
+The existing RCallbacks::BestBidQuote() and RCallbacks::BestAskQuote()
+callbacks will continue to be invoked if only one side of the best bid/ask is
+received by the R | API client.
+
+To port prior versions of R | API to this version without changing any best
+bid/ask logic, one can invoke the best ask and then best bid callbacks from 
+within the new  best bid/ask callback.
+
+This version uses OmneFoundationLib 18.5.0.0, OmneFrameworkLib 18.2.0.0, 
+OmneEngine.cpp 18.0.0.0, OmneChannel.cpp 18.0.0.0, OmneStreamEngine.cpp 
+18.0.0.0, OpenSSL 1.0.1g, zlib 1.2.5, and RithmicClientCerts 6.1.0.0.
+
+This package has been built on the following platforms :
+ 	darwin-10               (Darwin 10, 64-bit)
+	linux-gnu-2.6.18        (RedHat Enterprise Linux 5.5, 32-bit)
+	linux-gnu-2.6.18-x86_64 (RedHat Enterprise Linux 5.5, 64-bit)
+	linux-gnu-2.6.32-x86_64 (RedHat Enterprise Linux 6.3, 64-bit)
+	win7                    (Windows 7 32-bit, 64-bit) 
+
+
+             Release Notes for RApi.cpp version 7.2.0.0
+             ------------------------------------------
+
+NOTE : In a future release, the order number, which is currently an int,
+       will be changed to the type tsNCharcb.
+
+The Cash On Hand value has been moved from RmsInfo to PnlInfo.
+
+Minor enhancements have been made, including revised documentation 
+for the failed login alert.
+
+This version uses OmneFoundationLib 18.5.0.0, OmneFrameworkLib 18.2.0.0, 
+OmneEngine.cpp 18.0.0.0, OmneChannel.cpp 18.0.0.0, OmneStreamEngine.cpp 
+18.0.0.0, OpenSSL 1.0.1g, zlib 1.2.5, and RithmicClientCerts 6.1.0.0.
+
+This package has been built on the following platforms :
+ 	darwin-10               (Darwin 10, 64-bit)
+	linux-gnu-2.6.18        (RedHat Enterprise Linux 5.5, 32-bit)
+	linux-gnu-2.6.18-x86_64 (RedHat Enterprise Linux 5.5, 64-bit)
+	linux-gnu-2.6.32-x86_64 (RedHat Enterprise Linux 6.3, 64-bit)
+	win7                    (Windows 7 32-bit, 64-bit) 
+
+
+             Release Notes for RApi.cpp version 7.1.1.0
+             ------------------------------------------
+
+NOTE : In a future release, the order number, which is currently an int,
+       will be changed to the type tsNCharcb.
+
+Minor fixes and documentation changes have been made related to 'cancel at' 
+functionality.
+
+This version uses OmneFoundationLib 18.5.0.0, OmneFrameworkLib 18.2.0.0, 
+OmneEngine.cpp 18.0.0.0, OmneChannel.cpp 18.0.0.0, OmneStreamEngine.cpp 
+18.0.0.0, OpenSSL 1.0.1g, zlib 1.2.5, and RithmicClientCerts 6.1.0.0.
+
+This package has been built on the following platforms :
+ 	darwin-10               (Darwin 10, 64-bit)
+	linux-gnu-2.6.18        (RedHat Enterprise Linux 5.5, 32-bit)
+	linux-gnu-2.6.18-x86_64 (RedHat Enterprise Linux 5.5, 64-bit)
+	linux-gnu-2.6.32-x86_64 (RedHat Enterprise Linux 6.3, 64-bit)
+	win7                    (Windows 7 32-bit, 64-bit) 
+
+
+             Release Notes for RApi.cpp version 7.1.0.0
+             ------------------------------------------
+
+NOTE : In a future release, the order number, which is currently an int,
+       will be changed to the type tsNCharcb.
+
+The ability to specify a cancel at time, or a cancel after time period, has 
+been added for new orders.
+
+The currency of an Account has been added to RmsInfo.
+
+The ability to subscribe to market data by exchange has been removed.
+
+This version uses OmneFoundationLib 18.5.0.0, OmneFrameworkLib 18.2.0.0, 
+OmneEngine.cpp 18.0.0.0, OmneChannel.cpp 18.0.0.0, OmneStreamEngine.cpp 
+18.0.0.0, OpenSSL 1.0.1g, zlib 1.2.5, and RithmicClientCerts 6.1.0.0.
+
+This package has been built on the following platforms :
+ 	darwin-10               (Darwin 10, 64-bit)
+	linux-gnu-2.6.18        (RedHat Enterprise Linux 5.5, 32-bit)
+	linux-gnu-2.6.18-x86_64 (RedHat Enterprise Linux 5.5, 64-bit)
+	linux-gnu-2.6.32-x86_64 (RedHat Enterprise Linux 6.3, 64-bit)
+	win7                    (Windows 7 32-bit, 64-bit) 
+
+
+             Release Notes for RApi.cpp version 7.0.0.1
+             ------------------------------------------
+
+NOTE : In a future release, the order number, which is currently an int,
+       will be changed to the type tsNCharcb.
+
+The interface for this release remains the same as in 7.0.0.0, but the 
+underlying libraries have been upgraded or recompiled.
+
+The OpenSSL library has been recompiled adding the compiler flag -fPIC for 
+darwin and linux.
+
+Minor enhancements and fixes have been made, including additional logging when
+logging out.
+
+This version uses OmneFoundationLib 18.5.0.0, OmneFrameworkLib 18.2.0.0, 
+OmneEngine.cpp 18.0.0.0, OmneChannel.cpp 18.0.0.0, OmneStreamEngine.cpp 
+18.0.0.0, OpenSSL 1.0.1g, zlib 1.2.5, and RithmicClientCerts 6.1.0.0.
+
+This package has been built on the following platforms :
+ 	darwin-10               (Darwin 10, 64-bit)
+	linux-gnu-2.6.18        (RedHat Enterprise Linux 5.5, 32-bit)
+	linux-gnu-2.6.18-x86_64 (RedHat Enterprise Linux 5.5, 64-bit)
+	linux-gnu-2.6.32-x86_64 (RedHat Enterprise Linux 6.3, 64-bit)
+	win7                    (Windows 7 32-bit, 64-bit) 
+
+
+             Release Notes for RApi.cpp version 7.0.0.0
+             ------------------------------------------
+
+NOTE : In a future release, the order number, which is currently an int,
+       will be changed to the type tsNCharcb.
+
+The ticker plant/market data connection now has its own user/pw authentication.
+Previously the same user/pw was used for authentication on all connections
+when logging in.
+
+Functionality to attempt obtaining a lock without blocking has been added with 
+REngine::tryLock().
+
+REngine::replayTrades() now returns conditional trades as well as regular 
+trades.
+
+The OpenSSL library has been upgraded to version 1.0.1g and RithmicClientCerts
+has been upgraded to 6.1.0.0.
+
+Minor enhancements and fixes have been made, including the addition of max
+price variance to RefDataInfo and revised documentation.
+
+This version uses OmneFoundationLib 17.18.1.0, OmneFrameworkLib 17.18.1.0, 
+OmneEngine.cpp 17.11.0.0, OmneChannel.cpp 17.9.0.0, OmneStreamEngine.cpp 
+17.10.0.0, OpenSSL 1.0.1g, zlib 1.2.5, and RithmicClientCerts 6.1.0.0.
+
+This package has been built on the following platforms :
+ 	darwin-10               (Darwin 10, 64-bit)
+	linux-gnu-2.6.18        (RedHat Enterprise Linux 5.5, 32-bit)
+	linux-gnu-2.6.18-x86_64 (RedHat Enterprise Linux 5.5, 64-bit)
+	linux-gnu-2.6.32-x86_64 (RedHat Enterprise Linux 6.3, 64-bit)
+	win7                    (Windows 7 32-bit, 64-bit) 
+
+
+             Release Notes for RApi.cpp version 6.8.0.0
+             ------------------------------------------
+
+NOTE : In a future release, the order number, which is currently an int,
+       will be changed to the type tsNCharcb.
+
+The notion of buying power has been added to the PnlInfo class.  Buying power
+is typically used by the risk management system for the pattern day trader
+risk algorithm.
+
+Minor changes and fixes have been made, including a scenario where 
+processing a LineInfo update could cause a crash.
+
+This version uses OmneFoundationLib 17.18.1.0, OmneFrameworkLib 17.18.1.0, 
+OmneEngine.cpp 17.11.0.0, OmneChannel.cpp 17.9.0.0, OmneStreamEngine.cpp 
+17.10.0.0, OpenSSL 1.0.1c, zlib 1.2.5, and RithmicClientCerts 6.0.1.0.
+
+This package has been built on the following platforms :
+ 	darwin-10               (Darwin 10, 64-bit)
+	linux-gnu-2.6.18        (RedHat Enterprise Linux 5.5, 32-bit)
+	linux-gnu-2.6.18-x86_64 (RedHat Enterprise Linux 5.5, 64-bit)
+	linux-gnu-2.6.32-x86_64 (RedHat Enterprise Linux 6.3, 64-bit)
+	win7                    (Windows 7 32-bit, 64-bit) 
+
+
+             Release Notes for RApi.cpp version 6.7.2.0
+             ------------------------------------------
+
+NOTE : In a future release, the order number, which is currently an int,
+       will be changed to the type tsNCharcb.
+
+Minor enhancements and bug fixes has been done.  The interface is the
+same as in 6.7.0.0.
+
+This version uses OmneFoundationLib 17.18.1.0, OmneFrameworkLib 17.18.1.0, 
+OmneEngine.cpp 17.11.0.0, OmneChannel.cpp 17.9.0.0, OmneStreamEngine.cpp 
+17.10.0.0, OpenSSL 1.0.1c, zlib 1.2.5, and RithmicClientCerts 6.0.1.0.
+
+This package has been built on the following platforms :
+ 	darwin-10               (Darwin 10, 64-bit)
+	linux-gnu-2.6.18        (RedHat Enterprise Linux 5.5, 32-bit)
+	linux-gnu-2.6.18-x86_64 (RedHat Enterprise Linux 5.5, 64-bit)
+	linux-gnu-2.6.32-x86_64 (RedHat Enterprise Linux 6.3, 64-bit)
+	win7                    (Windows 7 32-bit, 64-bit) 
+
+
+             Release Notes for RApi.cpp version 6.7.1.0
+             ------------------------------------------
+
+NOTE : In a future release, the order number, which is currently an int,
+       will be changed to the type tsNCharcb.
+
+Minor enhancements and bug fixes has been done, including updating the sample
+code to reflect the current Rithmic 01 Test parameters.  The interface is the
+same as in 6.7.0.0.
+
+This version uses OmneFoundationLib 17.18.1.0, OmneFrameworkLib 17.18.1.0, 
+OmneEngine.cpp 17.11.0.0, OmneChannel.cpp 17.9.0.0, OmneStreamEngine.cpp 
+17.10.0.0, OpenSSL 1.0.1c, zlib 1.2.5, and RithmicClientCerts 6.0.1.0.
+
+This package has been built on the following platforms :
+ 	darwin-10               (Darwin 10, 64-bit)
+	linux-gnu-2.6.18        (RedHat Enterprise Linux 5.5, 32-bit)
+	linux-gnu-2.6.18-x86_64 (RedHat Enterprise Linux 5.5, 64-bit)
+	linux-gnu-2.6.32-x86_64 (RedHat Enterprise Linux 6.3, 64-bit)
+	win7                    (Windows 7 32-bit, 64-bit) 
+
+
+             Release Notes for RApi.cpp version 6.7.0.0
+             ------------------------------------------
+
+NOTE : In a future release, the order number, which is currently an int,
+       will be changed to the type tsNCharcb.
+
+A new parameter has been added to all order operations (new, modify and 
+cancel).  This parameter flags the order operation with an algorithm string.
+Some exchanges may require this parameter to be set and have guidelines 
+regarding the value.  The following classes/methods have been affected :
+
+     - OrderParams
+     - LimitOrderParams
+     - MarketOrderParams
+     - ModifyOrderParams
+     - ModifyLimitOrderParams
+     - ModifyStopLimitOrderParams
+     - ModifyStopMarketOrderParams
+     - REngine::cancelAllOrders()
+     - REngine::cancelOrder()
+     - REngine::cancelOrderList()
+     - LineInfo
+
+Various enhancements and bug fixes have been made.  A race condition where 
+the order context may inadvertantly be blank has been solved.  The 
+OpeningIndicator class now has a volume, to go with a price.  The order 
+release connection id has been removed from the header file as it is no
+longer used.
+
+This version uses OmneFoundationLib 17.18.1.0, OmneFrameworkLib 17.18.1.0, 
+OmneEngine.cpp 17.11.0.0, OmneChannel.cpp 17.9.0.0, OmneStreamEngine.cpp 
+17.10.0.0, OpenSSL 1.0.1c, zlib 1.2.5, and RithmicClientCerts 6.0.1.0.
+
+This package has been built on the following platforms :
+ 	darwin-10               (Darwin 10, 64-bit)
+	linux-gnu-2.6.18        (RedHat Enterprise Linux 5.5, 32-bit)
+	linux-gnu-2.6.18-x86_64 (RedHat Enterprise Linux 5.5, 64-bit)
+	linux-gnu-2.6.32-x86_64 (RedHat Enterprise Linux 6.3, 64-bit)
+	win7                    (Windows 7 32-bit, 64-bit) 
+
+
+             Release Notes for RApi.cpp version 6.6.0.0
+             ------------------------------------------
+
+The LineInfo class has new fields to support trailing stops, One-Cancels-All
+and bracket orders.
+
+This version uses OmneFoundationLib 17.18.1.0, OmneFrameworkLib 17.18.1.0, 
+OmneEngine.cpp 17.11.0.0, OmneChannel.cpp 17.9.0.0, OmneStreamEngine.cpp 
+17.10.0.0, OpenSSL 1.0.1c, zlib 1.2.5, and RithmicClientCerts 6.0.1.0.
+
+This package has been built on the following platforms :
+ 	darwin-10               (Darwin 10, 64-bit)
+	linux-gnu-2.6.18        (RedHat Enterprise Linux 5.5, 32-bit)
+	linux-gnu-2.6.18-x86_64 (RedHat Enterprise Linux 5.5, 64-bit)
+	linux-gnu-2.6.32-x86_64 (RedHat Enterprise Linux 6.3, 64-bit)
+	win7                    (Windows 7 32-bit, 64-bit) 
+
+
+             Release Notes for RApi.cpp version 6.5.1.0
+             ------------------------------------------
+
+A condition where RCallbacks::SingleOrderReplay() would not be invoked 
+properly has been removed.
+
+This version uses OmneFoundationLib 17.18.1.0, OmneFrameworkLib 17.18.1.0, 
+OmneEngine.cpp 17.11.0.0, OmneChannel.cpp 17.9.0.0, OmneStreamEngine.cpp 
+17.10.0.0, OpenSSL 1.0.1c, zlib 1.2.5, and RithmicClientCerts 6.0.1.0.
+
+This package has been built on the following platforms :
+ 	darwin-10               (Darwin 10, 64-bit)
+	linux-gnu-2.6.18        (RedHat Enterprise Linux 5.5, 32-bit)
+	linux-gnu-2.6.18-x86_64 (RedHat Enterprise Linux 5.5, 64-bit)
+	linux-gnu-2.6.32-x86_64 (RedHat Enterprise Linux 6.3, 64-bit)
+	win7                    (Windows 7 32-bit, 64-bit) 
+
+
+             Release Notes for RApi.cpp version 6.5.0.0
+             ------------------------------------------
+
+The ability to specify a user tag when placing an order has been added 
+(OrderParams::sUserTag).  The user tag is different from the existing order 
+tag (OrderParams::sTag) in that it is intended to be reserved for end users' 
+use.  The existing order tag is often used by trading applications and 
+consequently unavailable to end users.
+
+Replaying a single order has been added.  The replay functionality applies to
+orders from the current trading session.  To support this functionality, a
+new callback type field (iType) has been added to the LineInfo and OrderReport 
+classes.  The value of iType can be examined to determine if the LineInfo or
+OrderReport are from the real time stream, cache, or historical database. The 
+field bPossOutOfOrder has been removed from both classes, as it
+can be represented within the iType model as MD_IMAGE_CB.
+
+The buy and sell components of a net position have been added to PnlInfo.
+
+Minor fixes and enhancements have beem made, including updated documentation 
+supporting the changes to OrderParams, LineInfo and OrderReport.
+
+This version uses OmneFoundationLib 17.18.1.0, OmneFrameworkLib 17.18.1.0, 
+OmneEngine.cpp 17.11.0.0, OmneChannel.cpp 17.9.0.0, OmneStreamEngine.cpp 
+17.10.0.0, OpenSSL 1.0.1c, zlib 1.2.5, and RithmicClientCerts 6.0.1.0.
+
+This package has been built on the following platforms :
+ 	darwin-10               (Darwin 10, 64-bit)
+	linux-gnu-2.6.18        (RedHat Enterprise Linux 5.5, 32-bit)
+	linux-gnu-2.6.18-x86_64 (RedHat Enterprise Linux 5.5, 64-bit)
+	linux-gnu-2.6.32-x86_64 (RedHat Enterprise Linux 6.3, 64-bit)
+	win7                    (Windows 7 32-bit, 64-bit) 
+
+
+             Release Notes for RApi.cpp version 6.4.0.0
+             ------------------------------------------
+
+The ability to modify multiple orders with a single call has been added.
+
+Custom indicator functionality has been removed.
+
+Minor changes and fixes have been made, including additional documentation on
+trade routes and a scenario where modifyOrder() would crash.
+
+This version uses OmneFoundationLib 17.18.1.0, OmneFrameworkLib 17.18.1.0, 
+OmneEngine.cpp 17.11.0.0, OmneChannel.cpp 17.9.0.0, OmneStreamEngine.cpp 
+17.10.0.0, OpenSSL 1.0.1c, zlib 1.2.5, and RithmicClientCerts 6.0.1.0.
+
+This package has been built on the following platforms :
+ 	darwin-10               (Darwin 10, 64-bit)
+	linux-gnu-2.6.18        (RedHat Enterprise Linux 5.5, 32-bit)
+	linux-gnu-2.6.18-x86_64 (RedHat Enterprise Linux 5.5, 64-bit)
+	linux-gnu-2.6.32-x86_64 (RedHat Enterprise Linux 6.3, 64-bit)
+	win7                    (Windows 7 32-bit, 64-bit) 
+
+
+             Release Notes for RApi.cpp version 6.3.1.0
+             ------------------------------------------
+
+VAR_STATE has been renamed VALUE_STATE to synchronize the interface with 
+R | API.NET more closely.
+
+This version uses OmneFoundationLib 17.18.1.0, OmneFrameworkLib 17.18.1.0, 
+OmneEngine.cpp 17.11.0.0, OmneChannel.cpp 17.9.0.0, OmneStreamEngine.cpp 
+17.10.0.0, OpenSSL 1.0.1c, zlib 1.2.5, and RithmicClientCerts 6.0.1.0.
+
+This package has been built on the following platforms :
+ 	darwin-10               (Darwin 10, 64-bit)
+	linux-gnu-2.6.18        (RedHat Enterprise Linux 5.5, 32-bit)
+	linux-gnu-2.6.18-x86_64 (RedHat Enterprise Linux 5.5, 64-bit)
+	linux-gnu-2.6.32-x86_64 (RedHat Enterprise Linux 6.3, 64-bit)
+	win7                    (Windows 7 32-bit, 64-bit) 
+
+
+             Release Notes for RApi.cpp version 6.3.0.0
+             ------------------------------------------
+
+Changes have been made to PnlInfo, adding the notion of when/how to update
+many of its member variables.  The interface for retrieving the list of
+binary contracts has changed, and the number of parameters reduced.
+
+This version uses OmneFoundationLib 17.18.1.0, OmneFrameworkLib 17.18.1.0, 
+OmneEngine.cpp 17.11.0.0, OmneChannel.cpp 17.9.0.0, OmneStreamEngine.cpp 
+17.10.0.0, OpenSSL 1.0.1c, zlib 1.2.5, and RithmicClientCerts 6.0.1.0.
+
+This package has been built on the following platforms :
+ 	darwin-10               (Darwin 10, 64-bit)
+	linux-gnu-2.6.18        (RedHat Enterprise Linux 5.5, 32-bit)
+	linux-gnu-2.6.18-x86_64 (RedHat Enterprise Linux 5.5, 64-bit)
+	linux-gnu-2.6.32-x86_64 (RedHat Enterprise Linux 6.3, 64-bit)
+	win7                    (Windows 7 32-bit, 64-bit) 
+
+
+             Release Notes for RApi.cpp version 6.2.0.0
+             ------------------------------------------
+
+Minor changes and fixes have been made including fixing a scenario where an 
+order failure report callback would be inadvertently suppressed.
+
+This version uses OmneFoundationLib 17.18.1.0, OmneFrameworkLib 17.18.1.0, 
+OmneEngine.cpp 17.11.0.0, OmneChannel.cpp 17.9.0.0, OmneStreamEngine.cpp 
+17.10.0.0, OpenSSL 1.0.1c, zlib 1.2.5, and RithmicClientCerts 6.0.1.0.
+
+This package has been built on the following platforms :
+ 	darwin-10               (Darwin 10, 64-bit)
+	linux-gnu-2.6.18        (RedHat Enterprise Linux 5.4, 32-bit)
+	linux-gnu-2.6.18-x86_64 (RedHat Enterprise Linux 5.5, 64-bit)
+	linux-gnu-2.6.32-x86_64 (RedHat Enterprise Linux 6.3, 64-bit)
+	win7                    (Windows 7 32-bit, 64-bit) 
+
+
+             Release Notes for RApi.cpp version 6.1.0.0
+             ------------------------------------------
+
+Trade route functionality has changed.  A trade route must now be specified 
+when placing orders.  One can retrieve and/or subscribe to available trade 
+routes, along with their current status (UP/DOWN).
+
+     REngine::listTradeRoutes()
+     REngine::subscribeTradeRoute()
+     REngine::unsubscribeTradeRoute()
+
+Minor changes and fixes have been made including revised documentation
+on binary contracts.
+
+This version uses OmneFoundationLib 17.18.1.0, OmneFrameworkLib 17.18.1.0, 
+OmneEngine.cpp 17.11.0.0, OmneChannel.cpp 17.9.0.0, OmneStreamEngine.cpp 
+17.10.0.0, OpenSSL 1.0.1c, zlib 1.2.5, and RithmicClientCerts 6.0.1.0.
+
+This package has been built on the following platforms :
+ 	darwin-10               (Darwin 10, 64-bit)
+	linux-gnu-2.6.18        (RedHat Enterprise Linux 5.4, 32-bit)
+	linux-gnu-2.6.18-x86_64 (RedHat Enterprise Linux 5.5, 64-bit)
+	linux-gnu-2.6.32-x86_64 (RedHat Enterprise Linux 6.3, 64-bit)
+	win7                    (Windows 7 32-bit, 64-bit) 
+
+
+             Release Notes for RApi.cpp version 6.0.0.0
+             ------------------------------------------
+
+Support for binary contracts has been added.  Users can retrieve binary 
+contract security definitions using REngine::getBinaryContractList() and 
+subscribe to binary contract definitions as they are published using 
+REngine::subscribeByUnderlying().  Users can subscribe to binary contract 
+market data using REngine::subscribe().
+
+New fields have been added to RefDataInfo to support binary contracts, and
+a new subscription flag, MD_REF_DATA, has been added to support subscribing for
+reference data.  The ref data flag parameter has been removed from 
+REngine::subscribeByUnderlying(), as it is no longer necessary with 
+MD_REF_DATA.
+
+New SSL certificate files are included with this release, as the old 
+certificate files expire on 08-July-2013.  These new certificates expire on
+03-May-2014.
+
+A compatibility fix has been made for Windows XP.  If XP libraries are used
+to build applications for both Windows XP and Windows 7, the environment must
+contain "RAPI_SYNC_TIMEOUT=disable" to avoid an error in the REngine 
+constructor.  This approach is discouraged, as disabing the sync timeout 
+mechanism reduces network robustness.
+
+This version uses OmneFoundationLib 17.18.1.0, OmneFrameworkLib 17.18.1.0, 
+OmneEngine.cpp 17.11.0.0, OmneChannel.cpp 17.9.0.0, OmneStreamEngine.cpp 
+17.10.0.0, OpenSSL 1.0.1c, zlib 1.2.5, and RithmicClientCerts 6.0.1.0.
+
+This package has been built on the following platforms :
+ 	darwin-10               (Darwin 10, 64-bit)
+	linux-gnu-2.6.18        (RedHat Enterprise Linux 5.4, 32-bit)
+	linux-gnu-2.6.18-x86_64 (RedHat Enterprise Linux 5.5, 64-bit)
+	linux-gnu-2.6.32-x86_64 (RedHat Enterprise Linux 6.3, 64-bit)
+	win7                    (Windows 7 32-bit, 64-bit) 
+
+
+             Release Notes for RApi.cpp version 5.11.0.0
+             -------------------------------------------
+
+Experimental statistics have been added to LineInfo and OrderReport.  The 
+statistics include the timestamp at the Rithmic gateway as the message leaves
+the infrastructure, and the output buffer bytes behind of that connection.  
+The statistics are intended for diagnostic purposes, and may not always be 
+available.  See the documentation for more detailed information.
+
+This version uses OmneFoundationLib 17.18.1.0, OmneFrameworkLib 17.18.1.0, 
+OmneEngine.cpp 17.11.0.0, OmneChannel.cpp 17.9.0.0, OmneStreamEngine.cpp 
+17.10.0.0, OpenSSL 1.0.1c, and zlib 1.2.5.
+
+This package has been built on the following platforms :
+ 	darwin-10               (Darwin 10, 64-bit)
+	linux-gnu-2.6.18        (RedHat Enterprise Linux 5.4, 32-bit)
+	linux-gnu-2.6.18-x86_64 (RedHat Enterprise Linux 5.5, 64-bit)
+	linux-gnu-2.6.32-x86_64 (RedHat Enterprise Linux 6.3, 64-bit)
+	win7                    (Windows 7 32-bit, 64-bit) 
+
+
+             Release Notes for RApi.cpp version 5.10.0.0
+             -------------------------------------------
+This version number has been skipped.
+
+
+             Release Notes for RApi.cpp version 5.9.0.0
+             ------------------------------------------
+This version number has been skipped.
+
+
+             Release Notes for RApi.cpp version 5.8.0.0
+             ------------------------------------------
+
+REngine::getEquityOptionList() along with its related methods and classes has
+been renamed to REngine::getInstrumentByUnderlying() to reflect more accurately
+its behavior.  This method can retrieve lists of options on futures as well as 
+equities, for example.
+
+Minor changes and fixes have been made including the addition of 
+LineInfo::sExchOrdId, new properties of TradeInfo, and a correction to 
+StrategyLegInfo::sExchange where the exchange was for the strategy, not the 
+leg.
+
+This version uses OmneFoundationLib 17.18.1.0, OmneFrameworkLib 17.18.1.0, 
+OmneEngine.cpp 17.11.0.0, OmneChannel.cpp 17.9.0.0, OmneStreamEngine.cpp 
+17.10.0.0, OpenSSL 1.0.1c, and zlib 1.2.5.
+
+This package has been built on the following platforms :
+ 	darwin-10               (Darwin 10, 64-bit)
+	linux-gnu-2.6.18        (RedHat Enterprise Linux 5.4, 32-bit)
+	linux-gnu-2.6.18-x86_64 (RedHat Enterprise Linux 5.5, 64-bit)
+	linux-gnu-2.6.32-x86_64 (RedHat Enterprise Linux 6.3, 64-bit)
+	win7                    (Windows 7 32-bit, 64-bit) 
+
+
+             Release Notes for RApi.cpp version 5.7.0.3
+             ------------------------------------------
+
+This is a dependency release.
+
+This version uses OmneFoundationLib 17.18.1.0, OmneFrameworkLib 17.18.1.0, 
+OmneEngine.cpp 17.11.0.0, OmneChannel.cpp 17.9.0.0, OmneStreamEngine.cpp 
+17.10.0.0, OpenSSL 1.0.1c, and zlib 1.2.5.
+
+This package has been built on the following platforms :
+ 	darwin-10               (Darwin 10, 64-bit)
+	linux-gnu-2.6.18        (RedHat Enterprise Linux 5.4, 32-bit)
+	linux-gnu-2.6.18-x86_64 (RedHat Enterprise Linux 5.5, 64-bit)
+	linux-gnu-2.6.32-x86_64 (RedHat Enterprise Linux 6.3, 64-bit)
+	win7                    (Windows 7 32-bit, 64-bit) 
+
+
+             Release Notes for RApi.cpp version 5.7.0.2
+             ------------------------------------------
+
+This is a dependency release.
+
+This version uses OmneFoundationLib 17.18.1.0, OmneFrameworkLib 17.18.1.0, 
+OmneEngine.cpp 17.11.0.0, OmneChannel.cpp 17.8.0.3, OmneStreamEngine.cpp 
+17.9.0.3, OpenSSL 1.0.1c, and zlib 1.2.5.
+
+This package has been built on the following platforms :
+ 	darwin-10               (Darwin 10, 64-bit)
+	linux-gnu-2.6.18        (RedHat Enterprise Linux 5.4, 32-bit)
+	linux-gnu-2.6.18-x86_64 (RedHat Enterprise Linux 5.5, 64-bit)
+	linux-gnu-2.6.32-x86_64 (RedHat Enterprise Linux 6.3, 64-bit)
+	win7                    (Windows 7 32-bit, 64-bit) 
+
+
+             Release Notes for RApi.cpp version 5.7.0.1
+             ------------------------------------------
+
+This version uses OmneFoundationLib 17.15.0.1, OmneFrameworkLib 17.15.0.0, 
+OmneEngine.cpp 17.10.0.1, OmneChannel.cpp 17.8.0.1, OmneStreamEngine.cpp 
+17.9.0.1, OpenSSL 1.0.1c, and zlib 1.2.5.
+
+This package has been built on the following platforms :
+	linux-gnu-2.6.18        (RedHat Enterprise Linux 5.4, 32-bit)
+	linux-gnu-2.6.18-x86_64 (RedHat Enterprise Linux 5.5, 64-bit)
+	win7                    (Windows 7 32-bit, 64-bit) 
+
+
+             Release Notes for RApi.cpp version 5.7.0.0
+             ------------------------------------------
+
+This version introduces the ability to subscribe to market data by an 
+underlying instrument (REngine::subscribeByUnderlying() and 
+REngine::unsubscribeByUnderlying()).  It can be used to simplify subscriptions 
+for market data by option chain.  The scope of the market data is specified by 
+the underlying instrument, the exchange, and an expiration.  The subscription 
+flag convention is the same as normal subscriptions.
+
+NOTE : 
+A staged migration is underway where the instrument type value "Spread" will 
+now have different values to more accurately distinguish what kind of Spread 
+it is.
+
+Below are the values :
+
+1. Future Strategy        (The legs are futures.)
+2. Equity Option Strategy (The legs are equity options.)
+3. Future Option Strategy (The legs are options on futures.)
+4. Equity Hybrid Strategy (The legs are an equity and its option.)
+5. Future Hybrid Strategy (The legs are a future and its option.)
+
+This value appears in RefDataInfo::sInstrumentType.
+
+This version uses OmneFoundationLib 17.9.2.0, OmneFrameworkLib 17.6.0.0, 
+OmneEngine.cpp 17.8.0.0, OmneChannel.cpp 17.6.0.0, OmneStreamEngine.cpp 
+17.7.0.0, OpenSSL 0.9.8l, and zlib 1.2.5.
+
+This package has been built on the following platforms :
+ 	darwin-10               (Darwin 10, 64-bit)
+	linux-gnu-2.6.18        (RedHat Enterprise Linux 5.4, 32-bit)
+	linux-gnu-2.6.18-x86_64 (RedHat Enterprise Linux 5.5, 64-bit)
+	win7                    (Windows 7 32-bit, 64-bit) 
+
+
+             Release Notes for RApi.cpp version 5.6.0.1
+             ------------------------------------------
+
+This version renames linux directories which now include an additional kernel 
+number.
+
+This version uses OmneFoundationLib 17.9.2.0, OmneFrameworkLib 17.6.0.0, 
+OmneEngine.cpp 17.8.0.0, OmneChannel.cpp 17.6.0.0, OmneStreamEngine.cpp 
+17.7.0.0, OpenSSL 0.9.8l, and zlib 1.2.5.
+
+This package has been built on the following platforms :
+	linux-gnu-2.6.18        (RedHat Enterprise Linux 5.4, 32-bit)
+	linux-gnu-2.6.18-x86_64 (RedHat Enterprise Linux 5.5, 64-bit)
+ 	darwin-10               (Darwin 10, 64-bit)
+	win7                    (Windows 7 32-bit, 64-bit) 
+
+
+             Release Notes for RApi.cpp version 5.6.0.0
+             ------------------------------------------
+
+This version adds an order context parameter when cancelling orders, to match
+the order context parameters available when placing or modifying orders.
+
+The OrderFailureReport has a new field sStatus, which can be used to determine 
+if the failed operation was a new order, cancellation or modification.  The
+values usedin these cases are :
+     complete            (sLINE_STATUS_COMPLETE)
+     Cancellation Failed (sLINE_STATUS_CANCEL_FAILED)
+     Modification Failed (sLINE_STATUS_MODIFY_FAILED)
+
+TradeInfo now includes timestamp values as presented by the exchange, if 
+available.
+
+Minor changes and fixes have been made including a case where a login failure
+alert was not firing before being disconnected from the infrastructure.
+
+This version uses OmneFoundationLib 17.9.2.0, OmneFrameworkLib 17.6.0.0, 
+OmneEngine.cpp 17.8.0.0, OmneChannel.cpp 17.6.0.0, OmneStreamEngine.cpp 
+17.7.0.0, OpenSSL 0.9.8l, and zlib 1.2.5.
+
+
+             Release Notes for RApi.cpp version 5.5.0.0
+             ------------------------------------------
+
+The order release connect point and its associated method 
+REngine::releaseHeldOrders() have been removed, as they are no longer supported
+by the infrastructure.
+
+Minor changes have been made, including an explicit check for the SSL files
+specified by the environment variables.
+
+This version uses OmneFoundationLib 17.9.2.0, OmneFrameworkLib 17.6.0.0, 
+OmneEngine.cpp 17.8.0.0, OmneChannel.cpp 17.6.0.0, OmneStreamEngine.cpp 
+17.7.0.0, OpenSSL 0.9.8l, and zlib 1.2.5.
+
+This package has been built on the following platforms :
+	linux-gnu-2.6        (RedHat Enterprise Linux 5.4, 32-bit)
+	linux-gnu-2.6-x86_64 (RedHat Enterprise Linux 5.5, 64-bit)
+ 	darwin-10            (Darwin 10, 64-bit)
+	win7                 (Windows 7 32-bit, 64-bit) 
+
+
+             Release Notes for RApi.cpp version 5.4.0.0
+             ------------------------------------------
+
+Support for open interest market data has been added.  There is a new 
+subscription flag, a new callback and the new OpenInterestInfo class.
+
+This version uses OmneFoundationLib 17.9.2.0, OmneFrameworkLib 17.6.0.0, 
+OmneEngine.cpp 17.8.0.0, OmneChannel.cpp 17.6.0.0, OmneStreamEngine.cpp 
+17.7.0.0, OpenSSL 0.9.8l, and zlib 1.2.5.
+
+This package has been built on the following platforms :
+	linux-gnu-2.6        (RedHat Enterprise Linux 5.4, 32-bit)
+	linux-gnu-2.6-x86_64 (RedHat Enterprise Linux 5.5, 64-bit)
+ 	darwin-10            (Darwin 10, 64-bit)
+	win7                 (Windows 7 32-bit, 64-bit) 
+
+
+             Release Notes for RApi.cpp version 5.3.1.0
+             ------------------------------------------
+
+Although the interface remains unchanged from 5.3.0.0, minor changes and fixes 
+have been made, including adding back some missing documentation, and removing 
+a hostname resolution condition which caused the REngine constructor to fail.
+
+This version uses OmneFoundationLib 17.9.2.0, OmneFrameworkLib 17.6.0.0, 
+OmneEngine.cpp 17.8.0.0, OmneChannel.cpp 17.6.0.0, OmneStreamEngine.cpp 
+17.7.0.0, OpenSSL 0.9.8l, and zlib 1.2.5.
+
+This package has been built on the following platforms :
+	linux-gnu-2.6        (RedHat Enterprise Linux 5.4, 32-bit)
+	linux-gnu-2.6-x86_64 (RedHat Enterprise Linux 5.5, 64-bit)
+ 	darwin-10            (Darwin 10, 64-bit)
+	win7                 (Windows 7 32-bit, 64-bit) 
+
+
+             Release Notes for RApi.cpp version 5.3.0.0
+             ------------------------------------------
+
+Profit and Loss (PnL) information is now retrieved from the 'PnL tree', which
+will appear as a new connect point.  Previously PnL information was retrieved 
+from the order plant (trading system connect point).  The following reflects
+this change : 
+
+     - LoginParams::sPnlCnnctPt has been added
+     - REngine::replayPnl() requires a connection to the PnL tree
+     - REngine::subscribeAccount(), which used to subcribe to order and PnL
+       updates, has been removed
+     - REngine::subscribePnl() has been added for PnL updates
+     - REngine::subscribeOrder() has been added for order updates
+
+The callback conventions remain the same - PnL updates resulting from PnL 
+subscriptions will be invoked on RCallbacks::PnlUpdate(), and order updates
+will be invoked on OrderReport callbacks or LineUpdate.
+
+Previously, PnL updates were published by the order plant during periods of
+order activity.  The PnL tree also publishes PnL information periodically, 
+typically once per second, for Accounts with trading activity in the current
+session and for instruments with open positions.
+
+This version uses OmneFoundationLib 17.9.1.0, OmneFrameworkLib 17.6.0.0, 
+OmneEngine.cpp 17.8.0.0, OmneChannel.cpp 17.6.0.0, OmneStreamEngine.cpp 
+17.7.0.0, OpenSSL 0.9.8l, and zlib 1.2.5.
+
+This package has been built on the following platforms :
+	linux-gnu-2.6        (RedHat Enterprise Linux 5.4, 32-bit)
+	linux-gnu-2.6-x86_64 (RedHat Enterprise Linux 5.5, 64-bit)
+ 	darwin-10            (Darwin 10, 64-bit)
+	win7                 (Windows 7 32-bit, 64-bit) 
+
+
+             Release Notes for RApi.cpp version 5.2.0.0
+             ------------------------------------------
+
+The ability to specify a new max show quantity has been removed from 
+ModifyOrderParams, as the value cannot be modified for an existing order.
+
+This release reorganizes the documentation, and removes the PDF version of the
+Programmers' Guide, which has been subsumed into the html.  A Quick Start 
+document has been added.
+
+The sample code now has either a compile line in the source code comments for
+non-Windows platforms, and a Visual Studio 2010 project for Windows platforms.
+
+This version uses OmneFoundationLib 17.9.1.0, OmneFrameworkLib 17.6.0.0, 
+OmneEngine.cpp 17.8.0.0, OmneChannel.cpp 17.6.0.0, OmneStreamEngine.cpp 
+17.7.0.0, OpenSSL 0.9.8l, and zlib 1.2.5.
+
+This package has been built on the following platforms :
+	linux-gnu-2.6        (RedHat Enterprise Linux 5.4, 32-bit)
+	linux-gnu-2.6-x86_64 (RedHat Enterprise Linux 5.5, 64-bit)
+ 	darwin-10            (Darwin 10, 64-bit)
+	win7                 (Windows 7 32-bit, 64-bit) 
+
+
+             Release Notes for RApi.cpp version 5.1.0.0
+             ------------------------------------------
+
+This release modifies third party indicator functionality.  The ability to 
+retrieve a list of indicator sources from the order plant has been removed,
+along with associated classes and methods.  The ability to retrieve a list of 
+indicators has been updated.
+
+This version uses OmneFoundationLib 17.9.0.0, OmneFrameworkLib 17.6.0.0, 
+OmneEngine.cpp 17.8.0.0, OmneChannel.cpp 17.6.0.0, OmneStreamEngine.cpp 
+17.7.0.0, OpenSSL 0.9.8l, and zlib 1.2.5.
+
+This package has been built on the following platforms :
+	linux-gnu-2.6        (RedHat Enterprise Linux 5.4, 32-bit)
+	linux-gnu-2.6-x86_64 (RedHat Enterprise Linux 5.5, 64-bit)
+ 	darwin-10            (Darwin 10, 64-bit)
+	win7                 (Windows 7 32-bit, 64-bit) 
+
+
+             Release Notes for RApi.cpp version 5.0.0.0
+             ------------------------------------------
+
+This release adds functionality supporting third party indicator data.  The
+functionality includes :
+
+     - logging in and out
+     - querying for the available list of indicators
+     - requesting historical indicator data
+     - requesting real-time indicator data
+
+The new class RIndicatorConn represents the connection to access indicator 
+data.  Using this class, one connects to an indicator plant and can request 
+indicator data.  There is a corresponding (pure abstract) class 
+RIndicatorCallbacks which defines all the callback methods.  For each callback 
+method there is a new Info class conveying data pertinent to the callback.
+
+The relationship between RIndicatorConn and RIndicatorCallbacks is similar to 
+the one between REngine and RCallbacks in that actions are initiated by 
+RIndicatorConn and the results are conveyed through RIndicatorCallbacks.
+
+Logging into the indicator plant (RIndicatorConn::login()) does not depend on 
+logging into the standard Rithmic trading platform (REngine::login()).
+
+It is possible to retrieve a list of sources from the standard Rithmic trading 
+platform by calling REngine::listIndicatorSources().
+
+This version uses OmneFoundationLib 17.9.0.0, OmneFrameworkLib 17.6.0.0, 
+OmneEngine.cpp 17.8.0.0, OmneChannel.cpp 17.6.0.0, OmneStreamEngine.cpp 
+17.7.0.0, OpenSSL 0.9.8l, and zlib 1.2.5.
+
+This package has been built on the following platforms :
+	linux-gnu-2.6        (RedHat Enterprise Linux 5.4, 32-bit)
+	linux-gnu-2.6-x86_64 (RedHat Enterprise Linux 5.5, 64-bit)
+ 	darwin-10            (Darwin 10, 64-bit)
+	win7                 (Windows 7 32-bit, 64-bit) 
+
+===============================================================================

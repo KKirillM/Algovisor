@@ -1,0 +1,28 @@
+﻿Build started 03.06.2016 10:56:12.
+     1>Project "e:\Algovisor\External\CrashReport\reporting\crashrpt\CrashRpt_vs2010.vcxproj" on node 2 (Build target(s)).
+     1>ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\CL.exe /c /IE:\Algovisor\External\CrashReport\include /IE:\Algovisor\External\CrashReport\reporting\crashsender /IE:\Algovisor\External\CrashReport\thirdparty\tinyxml /IE:\Algovisor\External\CrashReport\thirdparty\zlib /IE:\Algovisor\External\CrashReport\thirdparty\libpng /IE:\Algovisor\External\CrashReport\thirdparty\wtl /Zi /nologo /W4 /WX- /MP /Od /Oy- /D WIN32 /D NDEBUG /D _WINDOWS /D _USRDLL /D STRICT /D CRASHRPT_EXPORTS /D _VC80_UPGRADE=0x0600 /D _WINDLL /D _UNICODE /D UNICODE /GF /Gm- /EHsc /MD /GS /fp:precise /fp:except /Zc:wchar_t /Zc:forScope /Yc"stdafx.h" /Fp"Win32\Release\CrashRpt1402.pch" /Fo"Win32\Release\\" /Fd"Win32\Release\vc110.pdb" /Gd /TP /analyze- /errorReport:prompt StdAfx.cpp
+         StdAfx.cpp
+         C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\CL.exe /c /IE:\Algovisor\External\CrashReport\include /IE:\Algovisor\External\CrashReport\reporting\crashsender /IE:\Algovisor\External\CrashReport\thirdparty\tinyxml /IE:\Algovisor\External\CrashReport\thirdparty\zlib /IE:\Algovisor\External\CrashReport\thirdparty\libpng /IE:\Algovisor\External\CrashReport\thirdparty\wtl /Zi /nologo /W4 /WX- /MP /Od /Oy- /D WIN32 /D NDEBUG /D _WINDOWS /D _USRDLL /D STRICT /D CRASHRPT_EXPORTS /D _VC80_UPGRADE=0x0600 /D _WINDLL /D _UNICODE /D UNICODE /GF /Gm- /EHsc /MD /GS /fp:precise /fp:except /Zc:wchar_t /Zc:forScope /Yu"stdafx.h" /Fp"Win32\Release\CrashRpt1402.pch" /Fo"Win32\Release\\" /Fd"Win32\Release\vc110.pdb" /Gd /TP /analyze- /errorReport:prompt CrashHandler.cpp CrashRpt.cpp SharedMem.cpp Utility.cpp
+         CrashHandler.cpp
+         CrashRpt.cpp
+         SharedMem.cpp
+         Utility.cpp
+     1>e:\algovisor\external\crashreport\reporting\crashrpt\crashrpt.cpp(780): warning C4702: unreachable code
+       ResourceCompile:
+         C:\Program Files (x86)\Windows Kits\8.0\bin\x86\rc.exe /D NDEBUG /D _VC80_UPGRADE=0x0600 /D _UNICODE /D UNICODE /l"0x0409" /IE:\Algovisor\External\CrashReport\thirdparty\wtl /nologo /fo"Win32\Release\CrashRpt.res" CrashRpt.rc 
+       Link:
+         C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"E:\Algovisor\External\CrashReport\bin\Win32\CrashRpt1402.dll" /NOLOGO /LIBPATH:E:\Algovisor\External\CrashReport\thirdparty/lib psapi.lib mapi32.lib Rpcrt4.lib version.lib shell32.lib Comdlg32.lib gdi32.lib psapi.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /DEF:"CrashRpt.def" /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"E:\Algovisor\External\CrashReport\bin\Win32\CrashRpt1402.pdb" /OPT:REF /LTCG /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"E:\Algovisor\External\CrashReport\lib\CrashRpt1402.lib" /MACHINE:X86 /SAFESEH /DLL Win32\Release\CrashRpt.res
+         Win32\Release\CrashHandler.obj
+         Win32\Release\CrashRpt.obj
+         Win32\Release\SharedMem.obj
+         Win32\Release\StdAfx.obj
+         Win32\Release\Utility.obj
+            Creating library E:\Algovisor\External\CrashReport\lib\CrashRpt1402.lib and object E:\Algovisor\External\CrashReport\lib\CrashRpt1402.exp
+         LINK : /LTCG specified but no code generation required; remove /LTCG from the link command line to improve linker performance
+         CrashRpt_vs2010.vcxproj -> E:\Algovisor\External\CrashReport\bin\Win32\CrashRpt1402.dll
+     1>Done Building Project "e:\Algovisor\External\CrashReport\reporting\crashrpt\CrashRpt_vs2010.vcxproj" (Build target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:00:04.41

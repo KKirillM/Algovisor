@@ -1,0 +1,34 @@
+#ifndef _P2ESHAREDMEM_H__INCLUDED_
+#define _P2ESHAREDMEM_H__INCLUDED_
+
+#include "../../../Plaza-II-eRepl/P2eReplStorage/Include/P2eReplStorage.h"
+
+#ifdef P2ESHAREDMEM_EXPORTS
+	#define P2ESHAREDMEM_API P2_API_EXPORTS 
+	//__declspec(dllexport)
+#else
+	#define P2ESHAREDMEM_API P2_API_IMPORTS 
+	//__declspec(dllimport)
+#endif
+
+#ifdef  __cplusplus
+extern "C" {
+#endif
+
+P2ESHAREDMEM_API P2ERR P2CALLSPEC P2eShReplStorageOpen(const char* pSectionName, P2EREPL_STORAGE_HANDLE* ppStorage);
+P2ESHAREDMEM_API P2ERR P2CALLSPEC P2eShReplStorageClose(P2EREPL_STORAGE_HANDLE hStorage);
+
+P2ESHAREDMEM_API P2ERR P2CALLSPEC P2eShReplStorageBeginTransaction(P2EREPL_STORAGE_HANDLE hStorage);
+P2ESHAREDMEM_API P2ERR P2CALLSPEC P2eShReplStorageCommit(P2EREPL_STORAGE_HANDLE hStorage);
+P2ESHAREDMEM_API P2ERR P2CALLSPEC P2eShReplStorageRollback(P2EREPL_STORAGE_HANDLE hStorage);
+
+P2ESHAREDMEM_API P2ERR P2CALLSPEC P2eShReplStorageInsert(P2EREPL_STORAGE_HANDLE hStorage, TEReplRec* pRec);
+
+P2ESHAREDMEM_API P2ERR P2CALLSPEC P2eShReplStorageClearOldRev(P2EREPL_STORAGE_HANDLE hStorage, P2EREPL_REVISION_TYPE maxRev, UINT32 flag);
+P2ESHAREDMEM_API P2ERR P2CALLSPEC P2eShReplStorageGetNextRev(P2EREPL_STORAGE_HANDLE hStorage, P2EREPL_REVISION_TYPE* pRev);
+
+#ifdef  __cplusplus
+}
+#endif
+
+#endif // _P2ESHAREDMEM_H__INCLUDED_

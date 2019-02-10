@@ -1,0 +1,6 @@
+#ifdef _P2DBCOMPATIBILITY_H_
+#define _P2DBCOMPATIBILITY_H_
+
+
+
+#endif

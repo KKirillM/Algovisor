@@ -1,0 +1,313 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="java_samples_basic" default="default" basedir=".">
+	<description>Builds, tests, and runs the project gate_java.</description>
+	
+	<property environment="env"/>
+	<property name="cgate.home" location="${env.CGATE_HOME}"/>
+	
+	<property name="dir.scheme" location="${basedir}/scheme"/>
+	<property name="dir.classes" location="${basedir}/classes"/>
+	
+	<condition property="noncgatebuild">
+		<not>
+			<and>
+				<isset property="schemetool"/>
+				<and>
+					<isset property="cgatebinpath"/>
+					<isset property="cgatejarpath"/>
+					<isset property="p2binpath"/>
+					<isset property="cgatebinpath"/>
+
+				</and>
+			</and>
+		</not>
+	</condition>
+	<condition property="cgatebuild">
+		<and>
+			<isset property="schemetool"/>
+			<and>
+				<isset property="cgatebinpath"/>
+				<isset property="cgatejarpath"/>
+				<isset property="p2binpath"/>
+				<isset property="cgatebinpath"/>
+			</and>
+		</and>
+	</condition>
+	
+	<target name="makedirs">
+		<mkdir dir="${dir.scheme}"/>
+		<mkdir dir="${dir.classes}"/>
+	</target>
+	
+	<target name="schemes">
+		<echo>
+			${schemetool}
+			${p2binpath}
+			${cgatebinpath}
+		</echo>
+		<exec executable="${schemetool}">
+			<env key="PATH" path="${env.PATH}:${p2binpath}:${cgatebinpath}"/>
+			<arg line="makesrc -O java"/>
+			<arg line="-o ${dir.scheme}/SendScheme.java"/>
+			<arg line="-Djava-user-package=scheme"/>
+			<arg line="-Djava-class-name=SendScheme"/>
+			<arg line="forts_messages.ini message"/>
+		</exec>
+	</target>
+	
+	<target name="build" depends="makedirs, schemes">
+		<echo>
+			${cgatejar}
+		</echo>
+		<javac srcdir="${basedir}"
+			destdir="${dir.classes}"
+			classpath="${cgatejar}" includeantruntime="true" encoding='utf-8'>
+		</javac>
+	</target>
+	
+	<target name="package" depends="build">
+		<jar destfile="repl.jar"
+			basedir="${dir.classes}"
+			includes="ReplSample*.class">
+			<manifest>
+				<attribute name="Main-Class" value="ReplSample" />
+				<attribute name="Implementation-Vendor" value="Moscow Exchange" />
+				<attribute name="Implementation-Title" value="Repl sample" />
+				<attribute name="Implementation-Version" value="1.0" />				
+			</manifest>
+		</jar>
+		<jar destfile="send.jar"
+			basedir="${dir.classes}"
+			includes="SendSample*.class,scheme/SendSample*.class">
+			<manifest>
+				<attribute name="Main-Class" value="SendSample" />
+				<attribute name="Implementation-Vendor" value="Moscow Exchange" />
+				<attribute name="Implementation-Title" value="Send one thread sample" />
+				<attribute name="Implementation-Version" value="1.0" />				
+			</manifest>
+		</jar>
+		<jar destfile="send_mt.jar"
+			basedir="${dir.classes}"
+			includes="SendMtSample*.class,scheme/Send*.class">
+			<manifest>
+				<attribute name="Main-Class" value="SendMtSample" />
+				<attribute name="Implementation-Vendor" value="Moscow Exchange" />
+				<attribute name="Implementation-Title" value="Send multi thread sample" />
+				<attribute name="Implementation-Version" value="1.0" />				
+			</manifest>
+		</jar>
+		<jar destfile="p2sys.jar"
+			basedir="${dir.classes}"
+			includes="P2Sys*.class,scheme/P2Sys*.class">
+			<manifest>
+				<attribute name="Main-Class" value="P2SysSample" />
+				<attribute name="Implementation-Vendor" value="Moscow Exchange" />
+				<attribute name="Implementation-Title" value="P2Sys sample" />
+				<attribute name="Implementation-Version" value="1.0" />				
+			</manifest>
+		</jar>
+		<jar destfile="orderBook.jar" basedir="${dir.classes}" includes="OrderBook*.class">
+			<manifest>
+				<attribute name="Main-Class" value="OrderBookSample" />					
+				<attribute name="Implementation-Vendor" value="Moscow Exchange" />
+				<attribute name="Implementation-Title" value="OrderBook sample" />
+				<attribute name="Implementation-Version" value="1.0" />				
+			</manifest>
+		</jar>
+		<jar destfile="aggrSpy.jar" basedir="${dir.classes}" includes="AggrSpy*.class">
+			<manifest>
+				<attribute name="Main-Class" value="AggrSpySample" />
+				<attribute name="Implementation-Vendor" value="Moscow Exchange" />
+				<attribute name="Implementation-Title" value="AggrSpy sample" />
+				<attribute name="Implementation-Version" value="1.0" />
+			</manifest>
+		</jar>
+	</target>
+	
+	<path id="runtime.path">
+		<fileset dir="${basedir}" includes="*.jar"/>
+		<fileset dir="${cgatejarpath}" includes="*.jar"/>
+	</path>
+	
+	<target name="run.repl" depends="run.repl.int, run.repl.ext"/>
+	
+	<target name="run.repl.int" if="noncgatebuild">
+		<antcall target="run.repl.run">
+			<param name="cgatebinpath" value="${cgate.home}/bin"/>
+			<param name="cgatejarpath" value="${cgate.home}/sdk/lib"/>
+			<param name="p2binpath" value="${cgate.home}/bin"/>
+		</antcall>
+	</target>
+	<target name="run.repl.ext" if="cgatebuild">
+		<antcall target="run.repl.run">
+		</antcall>
+	</target>
+	
+	<target name="run.repl.run">
+			<echo>
+				arch ${os.arch}
+			</echo>
+		<java classname="ReplSample" fork="true">
+			<env key="PATH" value="${basedir};${cgatebinpath};${p2binpath};${env.PATH}"/>
+			<jvmarg value="-Dru.micexrts.cgate.path=${cgatebinpath}"/>
+			<jvmarg value="-Dru.micexrts.cgate.name=cgate_jni"/>
+			<classpath refid="runtime.path"/>
+			<arg line="index=${index}"/>
+		</java>
+	</target>
+	
+	<target name="run.send" depends="run.send.int, run.send.ext"/>
+	
+	<target name="run.send.int" if="noncgatebuild">
+		<antcall target="run.send.run">
+			<param name="cgatebinpath" value="${cgate.home}/bin"/>
+			<param name="cgatejarpath" value="${cgate.home}/sdk/lib"/>
+			<param name="p2binpath" value="${cgate.home}/bin"/>
+		</antcall>
+	</target>
+	<target name="run.send.ext" if="cgatebuild">
+		<antcall target="run.send.run">
+		</antcall>
+	</target>
+	
+	<target name="run.send.run">
+		<java classname="SendSample" fork="true">
+			<env key="PATH" value="${basedir};${cgatebinpath};${p2binpath};${env.PATH}"/>
+			<jvmarg value="-Dru.micexrts.cgate.path=${cgatebinpath}"/>
+			<jvmarg value="-Dru.micexrts.cgate.name=cgate_jni"/>
+			<classpath refid="runtime.path"/>
+		</java>
+	</target>
+	
+	<target name="run.sendMt" depends="run.sendMt.int, run.sendMt.ext"/>
+	
+	<target name="run.sendMt.int" if="noncgatebuild">
+		<antcall target="run.sendMt.run">
+			<param name="cgatebinpath" value="${cgate.home}/bin"/>
+			<param name="cgatejarpath" value="${cgate.home}/sdk/lib"/>
+			<param name="p2binpath" value="${cgate.home}/bin"/>
+		</antcall>
+	</target>
+	<target name="run.sendMt.ext" if="cgatebuild">
+		<antcall target="run.sendMt.run">
+		</antcall>
+	</target>
+	
+	<target name="run.sendMt.run">
+		<java classname="SendMtSample" fork="true">
+			<env key="PATH" value="${basedir};${cgatebinpath};${p2binpath};${env.PATH}"/>
+			<jvmarg value="-Dru.micexrts.cgate.path=${cgatebinpath}"/>
+			<jvmarg value="-Dru.micexrts.cgate.name=cgate_jni"/>
+			<classpath refid="runtime.path"/>
+		</java>
+	</target>
+	
+	<target name="run.orderBook" depends="run.orderBook.int, run.orderBook.ext"/>
+	
+	<target name="run.orderBook.int" if="noncgatebuild">
+		<antcall target="run.orderBook.run">
+			<param name="cgatebinpath" value="${cgate.home}/bin"/>
+			<param name="cgatejarpath" value="${cgate.home}/sdk/lib"/>
+			<param name="p2binpath" value="${cgate.home}/bin"/>
+		</antcall>
+	</target>
+	<target name="run.orderBook.ext" if="cgatebuild">
+		<antcall target="run.orderBook.run">
+		</antcall>
+	</target>
+	
+	<!-- How to pass arguments: -DisinId=193892 -Ddepth=8 -DfileName=orderbook.txt -Dr=false -->
+	<target name="run.orderBook.run">
+		<java classname="OrderBookSample" fork="false">
+			<env key="PATH" value="${basedir};${cgatebinpath};${p2binpath};${env.PATH}"/>
+			<jvmarg value="-Dru.micexrts.cgate.path=${cgatebinpath}" />
+			<jvmarg value="-Dru.micexrts.cgate.name=cgate_jni" />
+			<classpath refid="runtime.path"/>
+			<arg line="isinId=${isinId}"/>
+			<arg line="depth=${depth}"/>
+			<arg line="fileName=${fileName}"/>
+			<arg line="r=${r}"/>
+		</java>
+	</target>
+	
+	<target name="run.aggrSpy" depends="run.aggrSpy.int, run.aggrSpy.ext"/>
+	
+	<target name="run.aggrSpy.int" if="noncgatebuild">
+		<echo message="${cgate.home}"/>
+		<antcall target="run.aggrSpy.run">
+			<param name="cgatebinpath" value="${cgate.home}/bin"/>
+			<param name="cgatejarpath" value="${cgate.home}/sdk/lib"/>
+			<param name="p2binpath" value="${cgate.home}/bin"/>
+		</antcall>
+	</target>
+	<target name="run.aggrSpy.ext" if="cgatebuild">
+		<antcall target="run.aggrSpy.run">
+		</antcall>
+	</target>
+	<!-- How to pass arguments: -DisinId=193892 -Ddepth=8 -DfileName=orderbook.txt -Dr=false -->
+	<target name="run.aggrSpy.run">
+		<echo message="${cgate.home}"/>
+		<java classname="AggrSpySample" fork="false">
+			<env key="PATH" value="${basedir};${cgatebinpath};${p2binpath};${env.PATH}"/>
+			<jvmarg value="-Dru.micexrts.cgate.path=${cgatebinpath}"/>
+			<jvmarg value="-Dru.micexrts.cgate.name=cgate_jni" />
+			<classpath refid="runtime.path"/>
+			<arg line="isinId=${isinId}"/>
+			<arg line="depth=${depth}"/>
+			<arg line="fileName=${fileName}"/>
+			<arg line="r=${r}"/>
+		</java>
+	</target>
+	
+	<target name="run.p2sys" depends="run.p2sys.int, run.p2sys.ext"/>
+	
+	<target name="run.p2sys.int" if="noncgatebuild">
+		<antcall target="run.p2sys.run">
+			<param name="cgatebinpath" value="${cgate.home}/bin"/>
+			<param name="cgatejarpath" value="${cgate.home}/sdk/lib"/>
+			<param name="p2binpath" value="${cgate.home}/bin"/>
+		</antcall>
+	</target>
+	<target name="run.p2sys.ext" if="cgatebuild">
+		<antcall target="run.p2sys.run">
+		</antcall>
+	</target>
+	<target name="run.p2sys.run">
+		<java classname="P2SysSample" fork="true">
+			<env key="PATH" value="${basedir};${cgatebinpath};${p2binpath};${env.PATH}"/>
+			<jvmarg value="-Dru.micexrts.cgate.path=${cgatebinpath}"/>
+			<jvmarg value="-Dru.micexrts.cgate.name=cgate_jni"/>
+			<arg line="${login} ${pwd}"/>
+			<classpath refid="runtime.path"/>
+		</java>
+	</target>
+	
+	<target name="clean">
+		<delete dir="${dir.scheme}"/>
+		<delete dir="${dir.classes}"/>
+		<delete file="${basedir}/send.jar"/>
+		<delete file="${basedir}/send_mt.jar"/>
+		<delete file="${basedir}/repl.jar"/>
+		<delete file="${basedir}/p2sys.jar"/>
+		<delete file="${basedir}/orderBook.jar"/>
+		<delete file="${basedir}/aggrSpy.jar"/>
+	</target>
+	
+	<target name="allint" if="noncgatebuild">
+		<antcall target="package">
+		<param name="schemetool" value="${cgate.home}/bin/schemetool"/>
+			<param name="cgatebinpath" value="${cgate.home}/bin"/>
+			<param name="cgatejarpath" value="${cgate.home}/sdk/lib"/>
+			<param name="cgatejar" value="${cgate.home}/sdk/lib/cgate.jar"/>
+		</antcall>
+	</target>
+	
+	<target name="allext" if="cgatebuild">
+		<antcall target="package">
+		</antcall>
+	</target>
+	
+	
+	<target name="all" depends="allint, allext"/>
+	<target name="default" depends="all"/>
+</project>

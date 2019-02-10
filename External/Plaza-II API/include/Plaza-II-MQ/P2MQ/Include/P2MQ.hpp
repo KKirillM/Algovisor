@@ -1,0 +1,13 @@
+#ifndef _P2MQ_HPP_
+#define _P2MQ_HPP_
+
+#include "../../../Plaza-II/P2Utils/Include/AutoHandle.hpp"
+#include "P2MQ.h"
+
+////////////////////////////////////////////////////////////////////////////////
+
+typedef AutoP2Handle<P2MQ_CONN_HANDLE, P2MQFreeConnection> P2AutoMQConnHandle;
+
+////////////////////////////////////////////////////////////////////////////////
+
+#endif // _P2MQ_HPP_

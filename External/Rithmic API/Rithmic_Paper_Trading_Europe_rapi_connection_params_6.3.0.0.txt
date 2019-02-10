@@ -1,0 +1,66 @@
+Configuration and Parameters for "Rithmic Paper Trading Europe"
+===============================================================
+
+We recommend that you use the configurations below as we have specified them.
+These configurations require you to be able to resolve the hostnames listed
+below which are resolvable on the public internet by DNS.
+
+
+For C++ Rithmic APIs :
+======================
+
+REngineParams :
+
+REngineParams.sAdmCnnctPt : "dd_admin_sslc"
+REngineParams.envp : The following variables need to be present :
+
+   * MML_DMN_SRVR_ADDR=ritpa11120.11.rithmic.com:65000~ritpa11120.11.rithmic.net:65000~ritpa11120.11.theomne.net:65000~ritpa11120.11.theomne.com:65000
+   * MML_DOMAIN_NAME=rithmic_paper_prod_domain
+   * MML_LIC_SRVR_ADDR=ritpa11120.11.rithmic.com:56000~ritpa11120.11.rithmic.net:56000~ritpa11120.11.theomne.net:56000~ritpa11120.11.theomne.com:56000
+   * MML_LOC_BROK_ADDR=ritpa11120.11.rithmic.com:64100
+   * MML_LOGGER_ADDR=ritpa11120.11.rithmic.com:45454~ritpa11120.11.rithmic.net:45454~ritpa11120.11.theomne.net:45454~ritpa11120.11.theomne.com:45454
+   * MML_LOG_TYPE=log_net
+   * MML_SSL_CLNT_AUTH_FILE=rithmic_ssl_cert_auth_params (full path to file)
+   * MML_SSL_CLNT_CERT_FILE=rithmic_ssl_client_params (full path to file)
+   * MML_SSL_CLNT_KEY_FILE=rithmic_ssl_client_private_key (full path to file)
+   * USER=my_user_name (put your user name)
+
+Login Params:
+
+   * LoginParams.sMdCnnctPt : "login_agent_tp_aws_europec"
+
+Aggregated Market Data
+   * LoginParams.sMdCnnctPt : "login_agent_tp_agg_aws_europec"
+
+   * LoginParams.sTsCnnctPt : "login_agent_op_aws_europec"
+   * LoginParams.sIhCnnctPt : "login_agent_history_paperc"
+   * LoginParams.sPnLCnnctPt : "login_agent_pnl_paperc"
+   * LoginParams.sOrCnnctPt : "Not currently available"
+
+For .NET Rithmic APIs :
+=======================
+
+REngineParams :
+
+REngineParams.AdmCnnctPt  : "dd_admin_sslc"
+REngineParams.DmnSrvrAddr : "ritpa11120.11.rithmic.com:65000~ritpa11120.11.rithmic.net:65000~ritpa11120.11.theomne.net:65000~ritpa11120.11.theomne.com:65000"
+REngineParams.DomainName  : "rithmic_paper_prod_domain"
+REngineParams.LicSrvrAddr : "ritpa11120.11.rithmic.com:56000~ritpa11120.11.rithmic.net:56000~ritpa11120.11.theomne.net:56000~ritpa11120.11.theomne.com:56000"
+REngineParams.LocBrokAddr : "ritpa11120.11.rithmic.com:64100"
+REngineParams.LoggerAddr  : "ritpa11120.11.rithmic.com:45454~ritpa11120.11.rithmic.net:45454~ritpa11120.11.theomne.net:45454~ritpa11120.11.theomne.com:45454"
+REngineParams.CertFile    : RithmicCertificate.pk12 (full path to file)
+
+REngine::login() Params :
+
+sTsCnnctPt : "login_agent_op_aws_europec"
+sMdCnnctPt : "login_agent_tp_aws_europec"
+
+Aggregated Market Data
+sMdCnnctPt : "login_agent_tp_agg_aws_europec"
+
+sIhCnnctPt : "login_agent_history_paperc"
+sPnLCnnctPt : "login_agent_pnl_paperc"
+sOrCnnctPt : <Not currently available>
+
+RIndicatorConn::login() Params :
+sCnnctPt : <Not currently available>

@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="windows-1251"?>
+<Bridge>
+  <Settings>
+    <Service>15005</Service>
+    <DisconnectIfIdleFor>60</DisconnectIfIdleFor>
+    <AutoStopTime>0:00:00</AutoStopTime>
+    <Language>Russian</Language>
+    <MinSupportedClientVer>6.71</MinSupportedClientVer>
+    <Compression>2</Compression>
+  </Settings>
+  <Logging>
+    <KeepLogFiles>31</KeepLogFiles>
+    <SaveUserLogsToFile>0</SaveUserLogsToFile>
+  </Logging>
+  <Monitoring>
+    <Service>8085</Service>
+    <StatsInterval>5</StatsInterval>
+    <KeyExpireDays>7</KeyExpireDays>
+    <LowDiskSpace>1000</LowDiskSpace>
+    <MailServer/>
+    <MailSender/>
+    <AdminEmails/>
+    <ConnectErrorEmails/>
+    <NetworkErrorEmails/>
+    <NetworkErrorEvent>3,2</NetworkErrorEvent>
+    <SlowTsmrEmails/>
+    <SlowTsmrEvent>5,5</SlowTsmrEvent>
+  </Monitoring>
+  <Engines>
+    <Engine Id="EQ_TEST" Name="Тестовый фондовый рынок ММВБ">
+      <Security>
+        <OnlyKnownUsers>0</OnlyKnownUsers>
+        <SignRequired>0</SignRequired>
+      </Security>
+      <TSMR>
+        <Broadcast>195.1.1.255,195.1.2.255,196.1.2.255,196.1.3.255,196.1.5.255,196.1.6.255</Broadcast>
+        <PrefBroadcast/>
+        <Server>FOND_GATEWAY</Server>
+        <Service>fond_gateway</Service>
+        <BufSize>60000</BufSize>
+        <IgnoreUserBufSize>1</IgnoreUserBufSize>
+        <Timeout>0</Timeout>
+        <ConnectTimeOut>30</ConnectTimeOut>
+        <LogLevel>0</LogLevel>
+        <Compression>1</Compression>
+        <IpSrcOrder/>
+        <RestrictList>0</RestrictList>
+        <TeUpTime>9:00:00</TeUpTime>
+        <MaxProcessingTime>500</MaxProcessingTime>
+        <LogUsers/>
+        <FirmFilter/>
+        <NoFilter/>
+      </TSMR>
+    </Engine>
+    <Engine Id="UAT_GATEWAY" Name="UAT_GATEWAY">
+      <TSMR>
+        <Broadcast>91.208.232.211</Broadcast>
+        <Server>UAT_GATEWAY</Server>
+        <Service>uat_gateway</Service>
+      </TSMR>
+    </Engine>
+    <Engine Id="UATCUR_GATEWAY" Name="UATCUR_GATEWAY">
+      <TSMR>
+        <Broadcast>91.208.232.211</Broadcast>
+        <Server>UATCUR_GATEWAY</Server>
+        <Service>uatcur_gateway</Service>
+      </TSMR>
+    </Engine>
+  </Engines>
+</Bridge>
