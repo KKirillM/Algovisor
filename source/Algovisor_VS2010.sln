@@ -1,0 +1,38 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "Setup_Win32", "Setup_Win32\Setup_Win32.vdproj", "{CBF3DEC0-D4AA-4713-8AD3-98E6DEC146AA}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Debug|x64 = Debug|x64
+		demo Debug|Win32 = demo Debug|Win32
+		demo Debug|x64 = demo Debug|x64
+		demo Release|Win32 = demo Release|Win32
+		demo Release|x64 = demo Release|x64
+		Full Debug|Win32 = Full Debug|Win32
+		Full Debug|x64 = Full Debug|x64
+		Full Release|Win32 = Full Release|Win32
+		Full Release|x64 = Full Release|x64
+		Release|Win32 = Release|Win32
+		Release|x64 = Release|x64
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{CBF3DEC0-D4AA-4713-8AD3-98E6DEC146AA}.Debug|Win32.ActiveCfg = Debug
+		{CBF3DEC0-D4AA-4713-8AD3-98E6DEC146AA}.Debug|x64.ActiveCfg = Debug
+		{CBF3DEC0-D4AA-4713-8AD3-98E6DEC146AA}.demo Debug|Win32.ActiveCfg = Debug
+		{CBF3DEC0-D4AA-4713-8AD3-98E6DEC146AA}.demo Debug|x64.ActiveCfg = Debug
+		{CBF3DEC0-D4AA-4713-8AD3-98E6DEC146AA}.demo Release|Win32.ActiveCfg = Release
+		{CBF3DEC0-D4AA-4713-8AD3-98E6DEC146AA}.demo Release|x64.ActiveCfg = Release
+		{CBF3DEC0-D4AA-4713-8AD3-98E6DEC146AA}.Full Debug|Win32.ActiveCfg = Debug
+		{CBF3DEC0-D4AA-4713-8AD3-98E6DEC146AA}.Full Debug|x64.ActiveCfg = Debug
+		{CBF3DEC0-D4AA-4713-8AD3-98E6DEC146AA}.Full Release|Win32.ActiveCfg = Release
+		{CBF3DEC0-D4AA-4713-8AD3-98E6DEC146AA}.Full Release|x64.ActiveCfg = Release
+		{CBF3DEC0-D4AA-4713-8AD3-98E6DEC146AA}.Release|Win32.ActiveCfg = Release
+		{CBF3DEC0-D4AA-4713-8AD3-98E6DEC146AA}.Release|x64.ActiveCfg = Release
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

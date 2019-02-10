@@ -1,0 +1,225 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="Algovisor.cpp" />
+    <ClCompile Include="CQGDialog.cpp">
+      <Filter>Dialogs</Filter>
+    </ClCompile>
+    <ClCompile Include="LoginDlg.cpp">
+      <Filter>Dialogs</Filter>
+    </ClCompile>
+    <ClCompile Include="MainWindow.cpp">
+      <Filter>Dialogs</Filter>
+    </ClCompile>
+    <ClCompile Include="NinjaDialog.cpp">
+      <Filter>Dialogs</Filter>
+    </ClCompile>
+    <ClCompile Include="RithmicDialog.cpp">
+      <Filter>Dialogs</Filter>
+    </ClCompile>
+    <ClCompile Include="Plaza2Dialog.cpp">
+      <Filter>Dialogs</Filter>
+    </ClCompile>
+    <ClCompile Include="Quant_Chart.cpp">
+      <Filter>Visualizations</Filter>
+    </ClCompile>
+    <ClCompile Include="BaseChart.cpp">
+      <Filter>Visualizations</Filter>
+    </ClCompile>
+    <ClCompile Include="QuoteRun.cpp">
+      <Filter>Visualizations</Filter>
+    </ClCompile>
+    <ClCompile Include="Heat_Map.cpp">
+      <Filter>Visualizations</Filter>
+    </ClCompile>
+    <ClCompile Include="ConnectionDialog.cpp">
+      <Filter>Dialogs</Filter>
+    </ClCompile>
+    <ClCompile Include="NinjaData.cpp">
+      <Filter>Callbacks</Filter>
+    </ClCompile>
+    <ClCompile Include="Plaza2Callbacks.cpp">
+      <Filter>Callbacks</Filter>
+    </ClCompile>
+    <ClCompile Include="PrivateKey.cpp">
+      <Filter>Dialogs</Filter>
+    </ClCompile>
+    <ClCompile Include="HardDriveSerialNumer.cpp">
+      <Filter>Auxiliary class and methods</Filter>
+    </ClCompile>
+    <ClCompile Include="Auxiliary_methods.cpp">
+      <Filter>Auxiliary class and methods</Filter>
+    </ClCompile>
+    <ClCompile Include="stdafx.cpp">
+      <Filter>Stdafx</Filter>
+    </ClCompile>
+    <ClCompile Include="Instrument.cpp">
+      <Filter>InstrumentsDB</Filter>
+    </ClCompile>
+    <ClCompile Include="Plaza2Instruments.cpp">
+      <Filter>InstrumentsDB</Filter>
+    </ClCompile>
+    <ClCompile Include="CQGData.cpp">
+      <Filter>Callbacks</Filter>
+    </ClCompile>
+    <ClCompile Include="RithmicCallbacks.cpp">
+      <Filter>Callbacks</Filter>
+    </ClCompile>
+    <ClCompile Include="Plaza2ReplayDialog.cpp">
+      <Filter>Dialogs</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Algovisor.h" />
+    <ClInclude Include="CQGDialog.h">
+      <Filter>Dialogs</Filter>
+    </ClInclude>
+    <ClInclude Include="LoginDlg.h">
+      <Filter>Dialogs</Filter>
+    </ClInclude>
+    <ClInclude Include="MainWindow.h">
+      <Filter>Dialogs</Filter>
+    </ClInclude>
+    <ClInclude Include="NinjaDialog.h">
+      <Filter>Dialogs</Filter>
+    </ClInclude>
+    <ClInclude Include="RithmicDialog.h">
+      <Filter>Dialogs</Filter>
+    </ClInclude>
+    <ClInclude Include="Plaza2Dialog.h">
+      <Filter>Dialogs</Filter>
+    </ClInclude>
+    <ClInclude Include="Quant_Chart.h">
+      <Filter>Visualizations</Filter>
+    </ClInclude>
+    <ClInclude Include="BaseChart.h">
+      <Filter>Visualizations</Filter>
+    </ClInclude>
+    <ClInclude Include="QuoteRun.h">
+      <Filter>Visualizations</Filter>
+    </ClInclude>
+    <ClInclude Include="Resource.h">
+      <Filter>Resource</Filter>
+    </ClInclude>
+    <ClInclude Include="Heat_Map.h">
+      <Filter>Visualizations</Filter>
+    </ClInclude>
+    <ClInclude Include="ConnectionDialog.h">
+      <Filter>Dialogs</Filter>
+    </ClInclude>
+    <ClInclude Include="Plaza2Callbacks.h">
+      <Filter>Callbacks</Filter>
+    </ClInclude>
+    <ClInclude Include="PrivateKey.h">
+      <Filter>Dialogs</Filter>
+    </ClInclude>
+    <ClInclude Include="HardDriveSerialNumer.h">
+      <Filter>Auxiliary class and methods</Filter>
+    </ClInclude>
+    <ClInclude Include="Auxiliary_methods.h">
+      <Filter>Auxiliary class and methods</Filter>
+    </ClInclude>
+    <ClInclude Include="DEFINE.h">
+      <Filter>Auxiliary class and methods</Filter>
+    </ClInclude>
+    <ClInclude Include="stdafx.h">
+      <Filter>Stdafx</Filter>
+    </ClInclude>
+    <ClInclude Include="targetver.h">
+      <Filter>Stdafx</Filter>
+    </ClInclude>
+    <ClInclude Include="Instrument.h">
+      <Filter>InstrumentsDB</Filter>
+    </ClInclude>
+    <ClInclude Include="Plaza2Instruments.h">
+      <Filter>InstrumentsDB</Filter>
+    </ClInclude>
+    <ClInclude Include="RithmicCallbacks.h">
+      <Filter>Callbacks</Filter>
+    </ClInclude>
+    <ClInclude Include="Plaza2ReplayDialog.h">
+      <Filter>Dialogs</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\Algovisor.rc2">
+      <Filter>Resource</Filter>
+    </None>
+    <None Include="res\icon1.ico">
+      <Filter>Resource</Filter>
+    </None>
+    <None Include="res\keyicon.ico">
+      <Filter>Resource</Filter>
+    </None>
+    <None Include="res\powered by omne.bmp">
+      <Filter>Resource</Filter>
+    </None>
+    <None Include="res\powered by Omne.ico">
+      <Filter>Resource</Filter>
+    </None>
+    <None Include="res\powered by omne.png">
+      <Filter>Resource</Filter>
+    </None>
+    <None Include="res\quantchart.ico">
+      <Filter>Resource</Filter>
+    </None>
+    <None Include="res\quotemapper.ico">
+      <Filter>Resource</Filter>
+    </None>
+    <None Include="res\quoterun.ico">
+      <Filter>Resource</Filter>
+    </None>
+    <None Include="res\rithmic\rithmicopy.ico">
+      <Filter>Resource</Filter>
+    </None>
+    <None Include="res\rithmic\rtep.ico">
+      <Filter>Resource</Filter>
+    </None>
+    <None Include="res\rithmic\rtep2.ico">
+      <Filter>Resource</Filter>
+    </None>
+    <None Include="res\softicons.ico">
+      <Filter>Resource</Filter>
+    </None>
+    <None Include="res\rithmic\rithmic-copy-small2.ico">
+      <Filter>Resource</Filter>
+    </None>
+    <None Include="res\TradinPlatformByRithmic-Black.png">
+      <Filter>Resource</Filter>
+    </None>
+    <None Include="res\TradinPlatformByRithmic.bmp">
+      <Filter>Resource</Filter>
+    </None>
+    <None Include="res\TradinPlatformByRithmic.ico">
+      <Filter>Resource</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Dialogs">
+      <UniqueIdentifier>{2be487b2-09df-4dc4-b330-6120f3cebb95}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resource">
+      <UniqueIdentifier>{69e92595-d39a-4ab8-9465-685ee4647160}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Callbacks">
+      <UniqueIdentifier>{c0a4b110-4262-4108-b206-479fc9739fcb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Auxiliary class and methods">
+      <UniqueIdentifier>{4175cd1e-e9af-49d1-a882-8f948486e8fb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Stdafx">
+      <UniqueIdentifier>{4ea05939-ba3e-44e2-8f89-e9659173806e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="InstrumentsDB">
+      <UniqueIdentifier>{9356e9eb-92a1-4169-9ec1-51a563574741}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Visualizations">
+      <UniqueIdentifier>{d3c75fa7-3f0e-4068-a580-eb50a7b50e3e}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="Algovisor.rc">
+      <Filter>Resource</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+</Project>

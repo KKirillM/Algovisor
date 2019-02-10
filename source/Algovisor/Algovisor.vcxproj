@@ -1,0 +1,529 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="demo Debug|Win32">
+      <Configuration>demo Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="demo Debug|x64">
+      <Configuration>demo Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="demo Release|Win32">
+      <Configuration>demo Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="demo Release|x64">
+      <Configuration>demo Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{87CF2619-722B-4A72-A2B0-98ED01998D58}</ProjectGuid>
+    <RootNamespace>Algovisor</RootNamespace>
+    <Keyword>MFCProj</Keyword>
+    <ProjectName>Algovisor</ProjectName>
+    <WindowsTargetPlatformVersion>8.1</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <CharacterSet>Unicode</CharacterSet>
+    <UseOfMfc>Dynamic</UseOfMfc>
+    <UseOfAtl>false</UseOfAtl>
+    <PlatformToolset>v140</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='demo Debug|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <CharacterSet>Unicode</CharacterSet>
+    <UseOfMfc>Static</UseOfMfc>
+    <UseOfAtl>false</UseOfAtl>
+    <PlatformToolset>v140</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+    <UseOfMfc>Static</UseOfMfc>
+    <PlatformToolset>v140</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='demo Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+    <UseOfMfc>Static</UseOfMfc>
+    <PlatformToolset>v140</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+    <UseOfMfc>Dynamic</UseOfMfc>
+    <PlatformToolset>v140</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='demo Release|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+    <UseOfMfc>Dynamic</UseOfMfc>
+    <PlatformToolset>v140</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Label="Configuration" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <PlatformToolset>v140</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+    <UseOfMfc>Static</UseOfMfc>
+  </PropertyGroup>
+  <PropertyGroup Label="Configuration" Condition="'$(Configuration)|$(Platform)'=='demo Debug|Win32'">
+    <PlatformToolset>v140</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='demo Debug|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="TRIAL_VERSION.props" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='demo Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="TRIAL_VERSION.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='demo Release|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="TRIAL_VERSION.props" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" />
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='demo Debug|Win32'" Label="PropertySheets">
+    <Import Project="TRIAL_VERSION.props" />
+  </ImportGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <LinkIncremental>true</LinkIncremental>
+    <TargetName>$(ProjectName)_d</TargetName>
+    <OutDir>..\..\bin\$(Platform)\</OutDir>
+    <IntDir>..\..\temp\$(ProjectName)\</IntDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='demo Debug|x64'">
+    <LinkIncremental>true</LinkIncremental>
+    <TargetName>$(ProjectName)_d</TargetName>
+    <OutDir>..\..\bin\$(Platform)\</OutDir>
+    <IntDir>..\..\temp\$(ProjectName)\</IntDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+    <OutDir>..\..\bin\$(Platform)\</OutDir>
+    <IntDir>..\..\temp\$(ProjectName)\$(Configuration)\</IntDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='demo Release|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+    <OutDir>..\..\bin\$(Platform)\</OutDir>
+    <IntDir>..\..\temp\$(ProjectName)\$(Configuration)\</IntDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <LinkIncremental>false</LinkIncremental>
+    <TargetName>$(ProjectName)</TargetName>
+    <OutDir>..\..\bin\$(Platform)\</OutDir>
+    <IntDir>..\..\temp\$(ProjectName)\</IntDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='demo Release|x64'">
+    <LinkIncremental>false</LinkIncremental>
+    <TargetName>$(ProjectName)</TargetName>
+    <OutDir>..\..\bin\$(Platform)\</OutDir>
+    <IntDir>..\..\temp\$(ProjectName)\</IntDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <OutDir>..\..\bin\$(Platform)\</OutDir>
+    <IntDir>..\..\temp\$(ProjectName)\$(Configuration)\</IntDir>
+    <TargetName>$(ProjectName)_d</TargetName>
+    <LinkIncremental>true</LinkIncremental>
+    <LibraryPath>$(VC_LibraryPath_x86);$(WindowsSDK_LibraryPath_x86);$(NETFXKitsDir)Lib\um\x86</LibraryPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='demo Debug|Win32'">
+    <OutDir>..\..\bin\$(Platform)\</OutDir>
+    <IntDir>..\..\temp\$(ProjectName)\$(Configuration)\</IntDir>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>..\Utils;..\Plaza2_Connector;$(PLAZA2_CGATE_INCLUDE_X64);$(PLAZA2_API_INCLUDE);$(CRUSHREPORT_INCLUDE);$(ALGOVISOR_EXTERNAL_PATH);$(CURL_INCLUDE_X64);$(RITHMIC_INCLUDE);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <TreatWarningAsError>false</TreatWarningAsError>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <MinimalRebuild>false</MinimalRebuild>
+      <SmallerTypeCheck>true</SmallerTypeCheck>
+      <ShowIncludes>false</ShowIncludes>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <InlineFunctionExpansion>Default</InlineFunctionExpansion>
+      <FavorSizeOrSpeed>Neither</FavorSizeOrSpeed>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>..\..\lib\$(Platform);..\..\bin\$(Platform)\;$(PLAZA2_CGATE_LIB_X64);$(PLAZA2_API_LIB_X64);$(CRUSHREPORT_LIB_X64);$(CURL_LIB_X64);$(RITHMIC_LIB);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>Utils_d.lib;P2Sys64D.lib;Plaza2_Connector_d.lib;CrashRpt1402d.lib;kit_mtd64.lib;apistb_mtd64.lib;api_mtd64.lib;OmneEngine_mtd64.lib;OmneChannel_mtd64.lib;OmneStreamEngine_mtd64.lib;RApi_mtd64.lib;libeay32_mtd64.lib;ssleay32_mtd64.lib;zlib_mtd64.lib;ws2_32.lib;iphlpapi.lib;psapi.lib;libcurl.lib;cgate64.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <IgnoreAllDefaultLibraries>false</IgnoreAllDefaultLibraries>
+      <IgnoreSpecificDefaultLibraries>LIBCMTD.lib;libcmt.lib</IgnoreSpecificDefaultLibraries>
+      <StackReserveSize>3000000</StackReserveSize>
+      <StackCommitSize>3000000</StackCommitSize>
+      <FixedBaseAddress>false</FixedBaseAddress>
+      <GenerateMapFile>false</GenerateMapFile>
+      <MapFileName>
+      </MapFileName>
+      <MapExports>false</MapExports>
+      <UACExecutionLevel>AsInvoker</UACExecutionLevel>
+    </Link>
+    <Midl>
+      <MkTypLibCompatible>false</MkTypLibCompatible>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </Midl>
+    <ResourceCompile>
+      <Culture>0x0409</Culture>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>$(IntDir);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='demo Debug|x64'">
+    <ClCompile>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>$(PLAZA2_API_INCLUDE);..\Utils;$(PLAZA2_CGATE_INCLUDE_X86);..\Plaza2_Connector;$(CRUSHREPORT_INCLUDE);$(ALGOVISOR_EXTERNAL_PATH);$(CURL_INCLUDE_X64);$(RITHMIC_INCLUDE);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <TreatWarningAsError>false</TreatWarningAsError>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <MinimalRebuild>false</MinimalRebuild>
+      <SmallerTypeCheck>true</SmallerTypeCheck>
+      <ShowIncludes>false</ShowIncludes>
+      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>$(PLAZA2_API_LIB_X64);..\..\lib\x64;..\..\bin\$(Platform)\;$(CRUSHREPORT_LIB_X64);$(CURL_LIB_X64);$(RITHMIC_LIB);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>Plaza2_Connector_d.lib;CrashRpt1402d.lib;Algovisor.lib;kit_mtd64.lib;apistb_mtd64.lib;api_mtd64.lib;OmneEngine_mtd64.lib;OmneChannel_mtd64.lib;OmneStreamEngine_mtd64.lib;RApi_mtd64.lib;libeay32_mtd64.lib;ssleay32_mtd64.lib;zlib_mtd64.lib;ws2_32.lib;iphlpapi.lib;psapi.lib;libcurl.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <IgnoreAllDefaultLibraries>false</IgnoreAllDefaultLibraries>
+      <IgnoreSpecificDefaultLibraries>LIBCMT.lib</IgnoreSpecificDefaultLibraries>
+      <StackReserveSize>3000000</StackReserveSize>
+      <StackCommitSize>3000000</StackCommitSize>
+      <FixedBaseAddress>false</FixedBaseAddress>
+      <GenerateMapFile>false</GenerateMapFile>
+      <MapFileName>
+      </MapFileName>
+      <MapExports>false</MapExports>
+      <UACExecutionLevel>AsInvoker</UACExecutionLevel>
+    </Link>
+    <Midl>
+      <MkTypLibCompatible>false</MkTypLibCompatible>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </Midl>
+    <ResourceCompile>
+      <Culture>0x0409</Culture>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>$(IntDir);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>..\Utils;..\Plaza2_Connector;$(PLAZA2_CGATE_INCLUDE_X86);$(PLAZA2_API_INCLUDE);$(CRUSHREPORT_INCLUDE);$(ALGOVISOR_EXTERNAL_PATH);$(CURL_INCLUDE_X86);$(RITHMIC_INCLUDE);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
+      <FavorSizeOrSpeed>Speed</FavorSizeOrSpeed>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <AdditionalDependencies>Plaza2Utils.lib;P2Sys.lib;P2eReplStorage.lib;cgate.lib;Utils.lib;Plaza2_Connector.lib;CrashRpt1402.lib;kit_mt.lib;apistb_mt.lib;api_mt.lib;OmneEngine_mt.lib;OmneChannel_mt.lib;OmneStreamEngine_mt.lib;RApiPlus_mt.lib;libeay32_mt.lib;ssleay32_mt.lib;zlib_mt.lib;ws2_32.lib;iphlpapi.lib;psapi.lib;libcurl.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>..\..\lib\$(Platform);..\..\bin\$(Platform)\;$(PLAZA2_CGATE_LIB_X86);$(PLAZA2_API_LIB_X86);$(CRUSHREPORT_LIB_X86);$(CURL_LIB_X86);$(RITHMIC_LIB);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <IgnoreSpecificDefaultLibraries>
+      </IgnoreSpecificDefaultLibraries>
+      <IgnoreAllDefaultLibraries>
+      </IgnoreAllDefaultLibraries>
+    </Link>
+    <Midl>
+      <MkTypLibCompatible>false</MkTypLibCompatible>
+      <ValidateAllParameters>true</ValidateAllParameters>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </Midl>
+    <ResourceCompile>
+      <Culture>0x0409</Culture>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>$(IntDir);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='demo Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>..\Utils;..\Plaza2_Connector;$(PLAZA2_CGATE_INCLUDE_X86);$(PLAZA2_API_INCLUDE);$(CRUSHREPORT_INCLUDE);$(ALGOVISOR_EXTERNAL_PATH);$(CURL_INCLUDE_X86);$(RITHMIC_INCLUDE);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
+      <FavorSizeOrSpeed>Speed</FavorSizeOrSpeed>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <AdditionalDependencies>cgate.lib;Utils.lib;Plaza2_Connector.lib;CrashRpt1402.lib;kit_mt.lib;apistb_mt.lib;api_mt.lib;OmneEngine_mt.lib;OmneChannel_mt.lib;OmneStreamEngine_mt.lib;RApiPlus_mt.lib;libeay32_mt.lib;ssleay32_mt.lib;zlib_mt.lib;ws2_32.lib;iphlpapi.lib;psapi.lib;libcurl.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>..\..\lib\$(Platform);..\..\bin\$(Platform)\;$(PLAZA2_CGATE_LIB_X86);$(PLAZA2_API_LIB_X86);$(CRUSHREPORT_LIB_X86);$(CURL_LIB_X86);$(RITHMIC_LIB);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <IgnoreSpecificDefaultLibraries>
+      </IgnoreSpecificDefaultLibraries>
+    </Link>
+    <Midl>
+      <MkTypLibCompatible>false</MkTypLibCompatible>
+      <ValidateAllParameters>true</ValidateAllParameters>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </Midl>
+    <ResourceCompile>
+      <Culture>0x0409</Culture>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>$(IntDir);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>_WINDOWS;NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>$(PLAZA2_API_INCLUDE);..\Utils;$(PLAZA2_CGATE_INCLUDE_X64);..\Plaza2_Connector;$(CRUSHREPORT_INCLUDE);$(ALGOVISOR_EXTERNAL_PATH);$(CURL_INCLUDE_X64);$(RITHMIC_INCLUDE);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <FavorSizeOrSpeed>Speed</FavorSizeOrSpeed>
+      <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <EnableEnhancedInstructionSet>NotSet</EnableEnhancedInstructionSet>
+      <OmitFramePointers>false</OmitFramePointers>
+      <BufferSecurityCheck>false</BufferSecurityCheck>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <AdditionalLibraryDirectories>$(PLAZA2_CGATE_LIB_X64);$(PLAZA2_API_LIB_X64);..\..\lib\x64;..\..\bin\$(Platform)\;$(CRUSHREPORT_LIB_X64);$(CURL_LIB_X64);$(RITHMIC_LIB);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>Utils.lib;P2Sys64.lib;Plaza2_Connector.lib;CrashRpt1402.lib;kit_mt64.lib;apistb_mt64.lib;api_mt64.lib;OmneEngine_mt64.lib;OmneChannel_mt64.lib;OmneStreamEngine_mt64.lib;RApi_mt64.lib;libeay32_mt64.lib;ssleay32_mt64.lib;zlib_mt64.lib;ws2_32.lib;iphlpapi.lib;psapi.lib;libcurl.lib;cgate64.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <IgnoreSpecificDefaultLibraries>LIBCMT.lib</IgnoreSpecificDefaultLibraries>
+      <FixedBaseAddress>false</FixedBaseAddress>
+      <SetChecksum>true</SetChecksum>
+      <Version>
+      </Version>
+      <UACExecutionLevel>AsInvoker</UACExecutionLevel>
+      <StripPrivateSymbols>
+      </StripPrivateSymbols>
+    </Link>
+    <Midl>
+      <MkTypLibCompatible>false</MkTypLibCompatible>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </Midl>
+    <ResourceCompile>
+      <Culture>0x0409</Culture>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>$(IntDir);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='demo Release|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>_WINDOWS;NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>$(PLAZA2_API_INCLUDE);..\Utils;$(PLAZA2_CGATE_INCLUDE_X64);..\Plaza2_Connector;$(CRUSHREPORT_INCLUDE);$(ALGOVISOR_EXTERNAL_PATH);$(CURL_INCLUDE_X64);$(RITHMIC_INCLUDE);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <FavorSizeOrSpeed>Speed</FavorSizeOrSpeed>
+      <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <OmitFramePointers>false</OmitFramePointers>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <AdditionalLibraryDirectories>$(PLAZA2_CGATE_LIB_X64);$(PLAZA2_API_LIB_X64);..\..\lib\x64;..\..\bin\$(Platform)\;$(CRUSHREPORT_LIB_X64);$(CURL_LIB_X64);$(RITHMIC_LIB);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>Utils.lib;P2Sys64.lib;Plaza2_Connector.lib;CrashRpt1402.lib;kit_mt64.lib;apistb_mt64.lib;api_mt64.lib;OmneEngine_mt64.lib;OmneChannel_mt64.lib;OmneStreamEngine_mt64.lib;RApi_mt64.lib;libeay32_mt64.lib;ssleay32_mt64.lib;zlib_mt64.lib;ws2_32.lib;iphlpapi.lib;psapi.lib;libcurl.lib;cgate64.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <IgnoreSpecificDefaultLibraries>LIBCMT.lib</IgnoreSpecificDefaultLibraries>
+      <FixedBaseAddress>false</FixedBaseAddress>
+      <SetChecksum>true</SetChecksum>
+      <Version>
+      </Version>
+      <UACExecutionLevel>AsInvoker</UACExecutionLevel>
+      <StripPrivateSymbols>
+      </StripPrivateSymbols>
+    </Link>
+    <Midl>
+      <MkTypLibCompatible>false</MkTypLibCompatible>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </Midl>
+    <ResourceCompile>
+      <Culture>0x0409</Culture>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>$(IntDir);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>..\Utils;..\Plaza2_Connector;$(PLAZA2_CGATE_INCLUDE_X86);$(PLAZA2_API_INCLUDE);$(CRUSHREPORT_INCLUDE);$(ALGOVISOR_EXTERNAL_PATH);$(CURL_INCLUDE_X86);$(RITHMIC_INCLUDE);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <SmallerTypeCheck>false</SmallerTypeCheck>
+      <Optimization>Disabled</Optimization>
+      <WarningLevel>Level3</WarningLevel>
+    </ClCompile>
+    <Link>
+      <AdditionalLibraryDirectories>..\..\lib\$(Platform);..\..\bin\$(Platform)\;$(PLAZA2_CGATE_LIB_X86);$(PLAZA2_API_LIB_X86);$(CRUSHREPORT_LIB_X86);$(CURL_LIB_X86);$(RITHMIC_LIB);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>Plaza2Utils_d.lib;P2Sys.lib;P2eReplStorage.lib;cgate.lib;Utils_d.lib;Plaza2_Connector_d.lib;CrashRpt1402.lib;kit_mtd.lib;apistb_mtd.lib;api_mtd.lib;OmneEngine_mtd.lib;OmneChannel_mtd.lib;OmneStreamEngine_mtd.lib;RApiPlus_mtd.lib;libeay32_mtd.lib;ssleay32_mtd.lib;zlib_mtd.lib;ws2_32.lib;iphlpapi.lib;psapi.lib;libcurl.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <IgnoreAllDefaultLibraries>false</IgnoreAllDefaultLibraries>
+      <IgnoreSpecificDefaultLibraries>
+      </IgnoreSpecificDefaultLibraries>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='demo Debug|Win32'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>..\Utils;..\Plaza2_Connector;$(PLAZA2_CGATE_INCLUDE_X86);$(PLAZA2_API_INCLUDE);$(CRUSHREPORT_INCLUDE);$(ALGOVISOR_EXTERNAL_PATH);$(CURL_INCLUDE_X86);$(RITHMIC_INCLUDE);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies>Plaza2_Connector.lib;CrashRpt1402.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>..\..\lib\$(Platform);..\..\bin\$(Platform)\;$(PLAZA2_CGATE_LIB_X86);$(PLAZA2_API_LIB_X86);$(CRUSHREPORT_LIB_X86);$(CURL_LIB_X86);$(RITHMIC_LIB);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <IgnoreSpecificDefaultLibraries>LIBCMT.lib</IgnoreSpecificDefaultLibraries>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <None Include="res\Algovisor.rc2" />
+    <None Include="res\icon1.ico" />
+    <None Include="res\keyicon.ico" />
+    <None Include="res\powered by omne.bmp" />
+    <None Include="res\powered by Omne.ico" />
+    <None Include="res\powered by omne.png" />
+    <None Include="res\quantchart.ico" />
+    <None Include="res\quotemapper.ico" />
+    <None Include="res\quoterun.ico" />
+    <None Include="res\rithmic\rithmic-copy-small2.ico" />
+    <None Include="res\rithmic\rithmicopy.ico" />
+    <None Include="res\rithmic\rtep.ico" />
+    <None Include="res\rithmic\rtep2.ico" />
+    <None Include="res\softicons.ico" />
+    <None Include="res\TradinPlatformByRithmic-Black.png" />
+    <None Include="res\TradinPlatformByRithmic.bmp" />
+    <None Include="res\TradinPlatformByRithmic.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Algovisor.h" />
+    <ClInclude Include="Auxiliary_methods.h" />
+    <ClInclude Include="ConnectionDialog.h" />
+    <ClInclude Include="CQGDialog.h" />
+    <ClInclude Include="HardDriveSerialNumer.h" />
+    <ClInclude Include="Heat_Map.h" />
+    <ClInclude Include="NinjaDialog.h" />
+    <ClInclude Include="BaseChart.h" />
+    <ClInclude Include="Plaza2Callbacks.h" />
+    <ClInclude Include="Plaza2Dialog.h" />
+    <ClInclude Include="Plaza2Instruments.h" />
+    <ClInclude Include="Plaza2ReplayDialog.h" />
+    <ClInclude Include="PrivateKey.h" />
+    <ClInclude Include="Quant_Chart.h" />
+    <ClInclude Include="QuoteRun.h" />
+    <ClInclude Include="Instrument.h" />
+    <ClInclude Include="LoginDlg.h" />
+    <ClInclude Include="DEFINE.h" />
+    <ClInclude Include="MainWindow.h" />
+    <ClInclude Include="Resource.h" />
+    <ClInclude Include="RithmicCallbacks.h" />
+    <ClInclude Include="RithmicDialog.h" />
+    <ClInclude Include="stdafx.h" />
+    <ClInclude Include="targetver.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Algovisor.cpp" />
+    <ClCompile Include="Auxiliary_methods.cpp" />
+    <ClCompile Include="ConnectionDialog.cpp" />
+    <ClCompile Include="CQGData.cpp" />
+    <ClCompile Include="CQGDialog.cpp" />
+    <ClCompile Include="HardDriveSerialNumer.cpp" />
+    <ClCompile Include="Heat_Map.cpp" />
+    <ClCompile Include="NinjaData.cpp" />
+    <ClCompile Include="NinjaDialog.cpp" />
+    <ClCompile Include="BaseChart.cpp" />
+    <ClCompile Include="Plaza2Callbacks.cpp" />
+    <ClCompile Include="Plaza2Dialog.cpp" />
+    <ClCompile Include="Plaza2Instruments.cpp" />
+    <ClCompile Include="Plaza2ReplayDialog.cpp" />
+    <ClCompile Include="PrivateKey.cpp" />
+    <ClCompile Include="Quant_Chart.cpp" />
+    <ClCompile Include="QuoteRun.cpp" />
+    <ClCompile Include="Instrument.cpp" />
+    <ClCompile Include="LoginDlg.cpp" />
+    <ClCompile Include="MainWindow.cpp" />
+    <ClCompile Include="RithmicCallbacks.cpp" />
+    <ClCompile Include="RithmicDialog.cpp" />
+    <ClCompile Include="stdafx.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='demo Debug|x64'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='demo Release|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='demo Release|x64'">Create</PrecompiledHeader>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="Algovisor.rc" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+  <ProjectExtensions>
+    <VisualStudio>
+      <UserProperties RESOURCE_FILE="Algovisor.rc" />
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>

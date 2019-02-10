@@ -1,0 +1,1 @@
+"c:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\Bin\signtool.exe" sign /uw /s AlgovisorCertStore "f:\C++ Projects\Algovisor\AA\Full Release\Algovisor_installer.exe"

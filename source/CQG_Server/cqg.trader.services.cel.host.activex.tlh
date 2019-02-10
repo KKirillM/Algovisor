@@ -1,0 +1,141 @@
+﻿// Created by Microsoft (R) C/C++ Compiler Version 10.00.30319.01 (46ac0fa0).
+//
+// f:\c++ projects\cqg_server\cqg_server\cqg_server\cqg.trader.services.cel.host.activex.tlh
+//
+// C++ source equivalent of Win32 type library C:\Program Files (x86)\CQG\CQG Trader\Bin\CQG.Trader.Services.CEL.Host.ActiveX.tlb
+// compiler-generated file created 01/31/15 at 14:43:10 - DO NOT EDIT!
+
+//
+// Cross-referenced type libraries:
+//
+//
+
+#pragma once
+#pragma pack(push, 8)
+
+#include <comdef.h>
+
+//
+// Forward references and typedefs
+//
+
+struct __declspec(uuid("34c4c8db-7ee2-4bcf-9e5e-dceea716af7f"))
+/* LIBID */ __CQG_Trader_Services_CEL_Host_ActiveX;
+struct __declspec(uuid("4b22420d-3e74-40ec-8614-6e74c0910854"))
+/* dual interface */ ICELHost;
+struct /* coclass */ CELHost;
+enum LogonState;
+struct __declspec(uuid("741146d8-26a5-47ae-99f1-46aafcdb736e"))
+/* dispinterface */ ICELHostEvent;
+
+//
+// Smart pointer typedef declarations
+//
+
+_COM_SMARTPTR_TYPEDEF(ICELHost, __uuidof(ICELHost));
+_COM_SMARTPTR_TYPEDEF(ICELHostEvent, __uuidof(ICELHostEvent));
+
+//
+// Type library items
+//
+
+struct __declspec(uuid("4e4f30c0-86a6-4a64-9c38-1466764562ce"))
+CELHost;
+    // interface _Object
+    // [ default ] interface ICELHost
+    // interface IDisposable
+    // [ default, source ] dispinterface ICELHostEvent
+
+enum __declspec(uuid("4b40f56c-b9c5-344d-9d10-20ef9ad3dbb0"))
+LogonState
+{
+    LogonState_LoggedOn = 0,
+    LogonState_LoggingOn = 1,
+    LogonState_LoggedOff = 2,
+    LogonState_LoggingOff = 3,
+    LogonState_Failed = 4
+};
+
+struct __declspec(uuid("4b22420d-3e74-40ec-8614-6e74c0910854"))
+ICELHost : IDispatch
+{
+    //
+    // Property data
+    //
+
+    __declspec(property(get=GetLogonState))
+    enum LogonState _LogonState;
+
+    //
+    // Wrapper methods for error-handling
+    //
+
+    HRESULT Logon (
+        _bstr_t name,
+        _bstr_t password,
+        VARIANT_BOOL isDemoLogon );
+    HRESULT Logoff ( );
+    enum LogonState GetLogonState ( );
+    ICQGCELPtr CreateCQGCEL ( );
+    HRESULT OneTimePasswordResponse (
+        _bstr_t oneTimePassword );
+    HRESULT ChangePassword (
+        _bstr_t oldPassword,
+        _bstr_t newPassword );
+
+    //
+    // Raw methods provided by interface
+    //
+
+      virtual HRESULT __stdcall raw_Logon (
+        /*[in]*/ BSTR name,
+        /*[in]*/ BSTR password,
+        /*[in]*/ VARIANT_BOOL isDemoLogon ) = 0;
+      virtual HRESULT __stdcall raw_Logoff ( ) = 0;
+      virtual HRESULT __stdcall get_LogonState (
+        /*[out,retval]*/ enum LogonState * pRetVal ) = 0;
+      virtual HRESULT __stdcall raw_CreateCQGCEL (
+        /*[out,retval]*/ struct ICQGCEL * * pRetVal ) = 0;
+      virtual HRESULT __stdcall raw_OneTimePasswordResponse (
+        /*[in]*/ BSTR oneTimePassword ) = 0;
+      virtual HRESULT __stdcall raw_ChangePassword (
+        /*[in]*/ BSTR oldPassword,
+        /*[in]*/ BSTR newPassword ) = 0;
+};
+
+struct __declspec(uuid("741146d8-26a5-47ae-99f1-46aafcdb736e"))
+ICELHostEvent : IDispatch
+{
+    //
+    // Wrapper methods for error-handling
+    //
+
+    // Methods:
+    HRESULT LogonStateChanged (
+        enum LogonState LogonState );
+    HRESULT ErrorReceived (
+        _bstr_t message );
+    HRESULT OneTimePasswordRequest ( );
+    HRESULT PasswordChangeRequest ( );
+};
+
+//
+// Named GUID constants initializations
+//
+
+extern "C" const GUID __declspec(selectany) LIBID_CQG_Trader_Services_CEL_Host_ActiveX =
+    {0x34c4c8db,0x7ee2,0x4bcf,{0x9e,0x5e,0xdc,0xee,0xa7,0x16,0xaf,0x7f}};
+extern "C" const GUID __declspec(selectany) CLSID_CELHost =
+    {0x4e4f30c0,0x86a6,0x4a64,{0x9c,0x38,0x14,0x66,0x76,0x45,0x62,0xce}};
+extern "C" const GUID __declspec(selectany) IID_ICELHost =
+    {0x4b22420d,0x3e74,0x40ec,{0x86,0x14,0x6e,0x74,0xc0,0x91,0x08,0x54}};
+extern "C" const GUID __declspec(selectany) DIID_ICELHostEvent =
+    {0x741146d8,0x26a5,0x47ae,{0x99,0xf1,0x46,0xaa,0xfc,0xdb,0x73,0x6e}};
+
+//
+// Wrapper method implementations
+//
+
+#include "f:\c++ projects\cqg_server\cqg_server\cqg_server\cqg.trader.services.cel.host.activex.tli"
+
+#pragma pack(pop)

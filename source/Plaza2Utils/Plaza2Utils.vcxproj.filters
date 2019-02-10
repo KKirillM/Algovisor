@@ -1,0 +1,72 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="exept.cpp">
+      <Filter>Source files</Filter>
+    </ClCompile>
+    <ClCompile Include="p2bcd.cpp">
+      <Filter>Source files</Filter>
+    </ClCompile>
+    <ClCompile Include="p2ini.cpp">
+      <Filter>Source files</Filter>
+    </ClCompile>
+    <ClCompile Include="p2log.cpp">
+      <Filter>Source files</Filter>
+    </ClCompile>
+    <ClCompile Include="p2time.cpp">
+      <Filter>Source files</Filter>
+    </ClCompile>
+    <ClCompile Include="stdafx.cpp">
+      <Filter>Source files</Filter>
+    </ClCompile>
+    <ClCompile Include="BaseApp.cpp">
+      <Filter>Source files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="cexept.h">
+      <Filter>Header files</Filter>
+    </ClInclude>
+    <ClInclude Include="EDBStorageReader.h">
+      <Filter>Header files</Filter>
+    </ClInclude>
+    <ClInclude Include="exept.h">
+      <Filter>Header files</Filter>
+    </ClInclude>
+    <ClInclude Include="p2bcd.h">
+      <Filter>Header files</Filter>
+    </ClInclude>
+    <ClInclude Include="p2errors.h">
+      <Filter>Header files</Filter>
+    </ClInclude>
+    <ClInclude Include="p2execlog.h">
+      <Filter>Header files</Filter>
+    </ClInclude>
+    <ClInclude Include="p2ini.h">
+      <Filter>Header files</Filter>
+    </ClInclude>
+    <ClInclude Include="p2log.h">
+      <Filter>Header files</Filter>
+    </ClInclude>
+    <ClInclude Include="p2time.h">
+      <Filter>Header files</Filter>
+    </ClInclude>
+    <ClInclude Include="p2timespan.h">
+      <Filter>Header files</Filter>
+    </ClInclude>
+    <ClInclude Include="stdafx.h">
+      <Filter>Header files</Filter>
+    </ClInclude>
+    <ClInclude Include="BaseApp.h">
+      <Filter>Header files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Header files">
+      <UniqueIdentifier>{da316bc7-ec07-43ba-a5ce-bfa2927a2c44}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source files">
+      <UniqueIdentifier>{9cd4ad4f-15a6-4ec7-b604-bd9b4d828f21}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

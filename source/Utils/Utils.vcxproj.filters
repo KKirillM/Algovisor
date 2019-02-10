@@ -1,0 +1,93 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="stdafx.cpp">
+      <Filter>Source files</Filter>
+    </ClCompile>
+    <ClCompile Include="assert.cpp">
+      <Filter>Source files</Filter>
+    </ClCompile>
+    <ClCompile Include="CommandLineParser.cpp">
+      <Filter>Source files</Filter>
+    </ClCompile>
+    <ClCompile Include="HelpTools.cpp">
+      <Filter>Source files</Filter>
+    </ClCompile>
+    <ClCompile Include="IniFileWorker.cpp">
+      <Filter>Source files</Filter>
+    </ClCompile>
+    <ClCompile Include="MatchingData.cpp">
+      <Filter>Source files</Filter>
+    </ClCompile>
+    <ClCompile Include="Price.cpp">
+      <Filter>Source files</Filter>
+    </ClCompile>
+    <ClCompile Include="Profiler.cpp">
+      <Filter>Source files</Filter>
+    </ClCompile>
+    <ClCompile Include="auxiliary_methods.cpp">
+      <Filter>Source files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="CommandLineParser.h">
+      <Filter>Header files</Filter>
+    </ClInclude>
+    <ClInclude Include="fo2thread.h">
+      <Filter>Header files</Filter>
+    </ClInclude>
+    <ClInclude Include="global.h">
+      <Filter>Header files</Filter>
+    </ClInclude>
+    <ClInclude Include="handle.h">
+      <Filter>Header files</Filter>
+    </ClInclude>
+    <ClInclude Include="HelpTools.h">
+      <Filter>Header files</Filter>
+    </ClInclude>
+    <ClInclude Include="IniFileWorker.h">
+      <Filter>Header files</Filter>
+    </ClInclude>
+    <ClInclude Include="keeper.h">
+      <Filter>Header files</Filter>
+    </ClInclude>
+    <ClInclude Include="lock.h">
+      <Filter>Header files</Filter>
+    </ClInclude>
+    <ClInclude Include="Logger.h">
+      <Filter>Header files</Filter>
+    </ClInclude>
+    <ClInclude Include="MatchingData.h">
+      <Filter>Header files</Filter>
+    </ClInclude>
+    <ClInclude Include="pcharhash.h">
+      <Filter>Header files</Filter>
+    </ClInclude>
+    <ClInclude Include="Price.h">
+      <Filter>Header files</Filter>
+    </ClInclude>
+    <ClInclude Include="Profiler.h">
+      <Filter>Header files</Filter>
+    </ClInclude>
+    <ClInclude Include="singleton.h">
+      <Filter>Header files</Filter>
+    </ClInclude>
+    <ClInclude Include="stdafx.h">
+      <Filter>Header files</Filter>
+    </ClInclude>
+    <ClInclude Include="SharedMemoryCriticalSectionLock.h">
+      <Filter>Header files</Filter>
+    </ClInclude>
+    <ClInclude Include="auxiliary_methods.h">
+      <Filter>Header files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Header files">
+      <UniqueIdentifier>{7308f47a-defe-4120-9e8d-d26f82a132b5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source files">
+      <UniqueIdentifier>{ab36c6c9-a851-4086-8b8a-15a46a6b07e0}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>
